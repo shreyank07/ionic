@@ -1,0 +1,132 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+    <app-navbar></app-navbar>
+  <div class="container-fluid">
+    <div class="row p-4">
+        <p style="color:#ababab;">Home > Men > Tshirts > Blue-Neck Tshirt</p>
+    </div>
+    <div class="row">
+        <div class="col-md">
+
+            <div class="side_view">
+                <a href="#"><img src="https://images.unsplash.com/photo-1621757787548-4d0cc5a6bf71?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                    onclick="change(this.src)" class="productImage"></a>
+                <a href="#"><img src="https://images.unsplash.com/photo-1620550580806-9426033a77a3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                    onclick="change(this.src)" class="productImage"></a>
+                <a href="#"><img src="https://images.unsplash.com/photo-1621844070735-4663c691a4af?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                    onclick="change(this.src)" class="productImage"></a>
+                <a href="#"><img src="https://images.unsplash.com/photo-1620407018121-0d1a3540f216?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                    onclick="change(this.src)" class="productImage"></a>
+            </div>
+
+            <div class="main_view">
+                <img src="https://images.unsplash.com/photo-1621757787548-4d0cc5a6bf71?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" id="main" alt="IMAGE">
+            </div>
+
+
+        </div>
+        <div class="col-md">
+            <div class="row">
+                <h3 style="font-weight : 600;">PRODUCT NAME GOES HERE</h3>
+            </div>
+            <div class="row">
+                <span class="mt-2" style="font-size: larger; font-weight: bolder;">$0.00</span>
+            </div>
+            <div class="row lightPara">
+                <p>Size</p>
+            </div>
+            <div class="SMLbuttons row ">
+                <button class="px-3 py-2 font-stretch">SMALL</button>
+                <button class="px-3 py-2 font-stretch">MEDIUM</button>
+                <button class="px-3 py-2 font-stretch">LARGE</button>
+            </div>
+            <div class="row lightPara">
+                <span class=lightPara-second;>Low Stock : <span class="redLine">Only 5 Left!</span> </span>
+            </div>
+            <div class="row addToCart mt-4 py-2 font-stretch">
+                <button>ADD TO CART</button>
+            </div>
+            <div class="row pt-4" style="margin-left: -19px;">
+                <div class="col-3">
+                    <div class="row">
+                        <img class="icon" src="../../assets/images/ordership.png" alt="plane">
+                        <div class="col iconLine">
+                            <p style="font-weight: 700 ; font-size:15px;">ORDERS SHIP</p>
+                            <p class="iconLineSmall">In 5 Business Days</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-left: 8px;">
+                    <div class="row">
+                        <img class="icon" src=".../../assets/images/free.png" alt="shipping">
+                        <div class="col iconLine">
+                            <p style="font-weight: 700 ; font-size:15px;">FREE</p>
+                            <p class="iconLineSmall">Shipping</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-left: -50px;">
+                    <div class="row">
+                        <img class="icon" src="../../assets/images/thumps.png" alt="return">
+                        <div class="col iconLine">
+                            <p style="font-weight: 700 ; font-size:15px;">30 DAY</p>
+                            <p class="iconLineSmall">Return and Refund</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row">
+                        <img class="icon" src="../../assets/images/secure.png" alt="secure">
+                        <div class="col iconLine">
+                            <p style="font-weight: 700 ; font-size:15px;">SECURE</p>
+                            <p class="iconLineSmall">Payments</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md productDetails">
+                    <h5 class="pt-4">PRODUCT DETAILS</h5>
+                    <hr>
+                    <div class="details">
+                        <p><span>Color</span><span class = "detailsText"> - Text goes here</span></p>
+                        <p><span>Weight</span><span class = "detailsText"> - Text goes here</span></p>
+                        <p><span>Material</span><span class="detailsText"> - Text goes here</span></p>
+                        <p><span>Dimensions</span><span class="detailsText"> - Text goes here</span></p>
+                        <p><span>Warranty</span><span class="detailsText"> - Text goes here</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row justify-content-center pt-4">
+                <a href="#">
+                    <div class=" fa fa-facebook-f socialIcon" ></div>
+                </a>
+                <a href="#">
+                    <div class=" fa fa-twitter socialIcon"></div>
+                </a>
+                <a href="#">
+                    <div class="fa fa-pinterest socialIcon" ></div>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    const change = src => {
+    document.getElementById('main').src = src
+}
+</script>
+<app-footer></app-footer>
+
+</ion-content>
