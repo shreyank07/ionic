@@ -11,5 +11,11 @@ export class Page1Page implements OnInit {
 
   ngOnInit() {
   }
+  username:any;
+  password:any;
+
+  loginMe(){
+    console.log(this.username,this.password);
+  }
 
 }

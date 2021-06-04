@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  user:any=[]
+  constructor(private userinfo: UserService) { }
 
-  ngOnInit() {}
+  ngOnInit():void{
+    this.user=this.userinfo.getdata()
+    
+  }
+  
+  
 
 }

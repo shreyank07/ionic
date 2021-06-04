@@ -10,23 +10,24 @@
             <div class="row text-centre" style="padding-left: 80px;" >
                 <p ><strong style="font-size: 20px; ">Sign up with Shopper's Stop</strong></p>
             </div>
-            <div class="row pb-3">
+            <!-- <div class="row pb-3">
                 <input type="text" id="FirstN" name="First name" Placeholder="First name" class="full-width " style="height: 40px;">
-            </div>
-            <div class="row pb-3">
-                <input type="email" id="email" name="email" Placeholder="Email ID" class="full-width " style="height: 40px;">
-            </div>
-            <div class="row pb-3">
-                <input type="password" id="password" name="password" Placeholder=" Set Password" class="full-width " style="height: 40px;">
-                <i class="far fa-eye pt-2" id="togglePassword" style="font-size: 20px; margin-left: -40px;" ></i>
-            </div>
-            <div class="row pb-3">
-                <input type="number" id="Number" name="Number" Placeholder=" Mobile number" class="full-width " style="height: 40px;">
-               
-            </div>
-            <div class="row ">
-                <button type="button" class="button btn-primary full-width  box-shadow" style=" box-shadow: 2px 2px 2px 2px  #b6b6b6;" >     CREATE AN ACCOUNT    </button>
-            </div>
+            </div> -->
+            <ion-item no-lines>
+                <ion-input [(ngModel)]="firstname"  placeholder="First Name " class="full-width userpass " style="height: 40px; text-decoration: none;"></ion-input>
+            </ion-item>
+            <ion-item no-lines>
+                <ion-input [(ngModel)]="email" placeholder="Email" class="full-width userpass " style="height: 40px; text-decoration: none;"></ion-input>
+            </ion-item>
+            <ion-item no-lines>
+                <ion-input type="password" [(ngModel)]="password" placeholder="Password" class="full-width userpass " style="height: 40px; text-decoration: none;"></ion-input>
+            </ion-item>
+            <ion-item no-lines>
+                <ion-input type="number" [(ngModel)]="number" placeholder="Number" class="full-width userpass " style="height: 40px; text-decoration: none;"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-button  (click)=" loginMe()"  class="full-width " style="height: 40px;">Create Account</ion-button>
+            </ion-item>
             <div class="row px-5 pt-2 mt-2" style="text-align: center; cursor: inherit;">
                     Already have an Account? <nav><a routerLink="/page1" routerLinlActive="active">login</a></nav>
             </div> 
@@ -36,3 +37,4 @@
   <app-footer></app-footer>
 
 </ion-content>
+<!-- <i class="far fa-eye pt-2" id="togglePassword" style="font-size: 20px; margin-left: -40px;" ></i> -->

@@ -24,21 +24,49 @@
             <a class="nav-link" style="color: black;" href="#">OFFERS</a>
           </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <div class="icon-bar nav-item ml-auto ">
-            <a href="#"><i class="material-icons iconstyle icon-color pt-4">&#xe8b6;</i></a>
-            <a href="#"><i class="material-icons iconstyle  icon-color px-5">&#xe854;</i></a>
-            <a class="nav-link dropdown-toggle nav-item dropdown " style="padding-left:140px; padding-top: 0px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons iconstyle  icon-color">&#xe7fd;</i>  
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <nav><a class="dropdown-item"  routerLink="/profile" routerLinlActive="active">Profile</a></nav>
-                <nav><a class="dropdown-item" routerLink="/history" routerLinlActive="active">Order History</a></nav>
-                <div class="dropdown-divider"></div>
-                <nav><a class="dropdown-item" style="color: red;"routerLink="/page1" routerLinlActive="active">Logout</a></nav>
-              </div></a></div>
-             
+      <nav class="navbar navbar-expand-sm">
+
+        <ul class="navbar-nav ml-auto">
         
-       
-    </ul>
+          <li class="nav-item"><a class="nav-link dropdown-toggle nav-item dropdown " style="padding: 20px; padding-top: 0px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons iconstyle icon-color">&#xe7fd;</i>
+        
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+              <nav><a class="dropdown-item" routerLink="/profile" routerLinlActive="active">
+              <div *ngFor="let u of user">
+                <p style="font-size: 25px;"><strong>{{u.name}}</strong><br><a style="font-size: 15px;" href="#">{{u.email}}</a></p>
+                <!-- <a style="margin-top: 0%; "href="#">{{u.email}}</a> -->
+              </div>
+              
+              </a></nav>
+            
+            
+            <div class="dropdown-divider"></div>
+            <nav><a class="dropdown-item" routerLink="/profile" routerLinlActive="active">Profile</a></nav>
+            
+            <nav><a class="dropdown-item" routerLink="/history" routerLinlActive="active">Order History</a></nav>
+            
+            <div class="dropdown-divider"></div>
+            
+            <nav><a class="dropdown-item"  style="color: red;"routerLink="/page1" routerLinlActive="active">Logout</a>
+            
+            </nav>
+            
+            </div>
+            
+            </a></li>
+        
+        <li class="nav-item"> <a href="#"><i class="material-icons iconstyle icon-color px-2">&#xe8b6;</i></a> </li>
+
+        
+        
+        <li class="nav-item"><a href="#"><i class="material-icons iconstyle icon-color px-4 ">&#xe854;</i></a></li>
+        
+        
+        
+        </ul>
+        
+        </nav>
       
     </div>
   </nav>
