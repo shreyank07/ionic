@@ -1,9 +1,73 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow" style="background-color: rgb(138, 212, 236);">
+      <a class="navbar-brand" style="font-size: 30px; color: rgb(9, 4, 109); font-style: oblique;"
+        href="#"><strong><u>SHOPPER'S STOP</u></strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <nav><a routerLink="/homepage" routerLinlActive="active" class="nav-link" style="color: black;">HOME </a>
+            </nav>
+          </li>
+          <li class="nav-item">
+            <nav><a routerLink="/mens" routerLinlActive="active" class="nav-link" style="color: black ">MEN</a></nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: black " href="#">WOMEN</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" style="color: black;" href="#">WATCHES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: black;" href="#">OFFERS</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <div class="icon-bar nav-item ml-auto ">
+            <a class="dropdown-toggle nav-item dropdown mx-2" style=" padding-top: 0px ; color: black;" href="#"
+            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+            class="material-icons iconstyle  icon-color">&#xe7fd;</i>
+            <div class="dropdown-menu mt-4" aria-labelledby="navbarDropdown" style = "margin-left:-100px; width: 250px !important; " >
+
+
+              <div class="dropdown-item ProfileDetails">
+                <span id ="name">Arthur Morgan</span>
+                <span id ="email">morgan@example.com</span>
+                <span class="fas fa-angle-right align-right" style="float: right; color: #007fe7; margin-top: -8px;"></span>
+              </div>
+              <hr>
+
+
+              <a class="dropdown-item" routerLink="/profile" routerLinlActive="active" style="font-weight: bold; margin-top: 10px;">Profile</a>
+              <a class="dropdown-item" routerLink="/history" routerLinlActive="active" style="font-weight: bold;">Order History</a>
+              <div class="dropdown-divider"></div>
+              <hr>
+              <a class="dropdown-item" style="color: red; padding-bottom: 0px;" routerLink="/page1"
+                routerLinlActive="active">Logout</a>
+              </div>
+            </a>
+            <a href="#" style=" color: black;"><i class="material-icons iconstyle icon-color mx-2">&#xe8b6;</i></a>
+            <a href="#" style="color: black;"><i class="material-icons iconstyle  icon-color mx-2">&#xe854;</i></a>
+          </div>
+
+
+
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+
+
 </ion-header>
 
 <ion-content>
+  
 
 </ion-content>
