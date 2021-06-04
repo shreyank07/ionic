@@ -1,0 +1,33 @@
+<ion-header>
+  <app-navbar></app-navbar>
+</ion-header>
+
+<ion-content>
+    
+  <div class="container-fluid">
+    <div class="row text-center  " >
+        <div class="col-md-4"></div>
+        <div class="col-md-4  mt-5 logincard">
+            <div class="row" style="padding-left: 45px;">
+                <label ><strong style="font-size: 30px;">Login to shopper's stop</strong></label>
+            </div>
+            <div class="row pb-3">
+                <input type="email" id="email" name="email" Placeholder="Email ID" class="full-width " style="height: 40px;">
+            </div>
+            <div class="row pb-3">
+                <input type="password" id="password" name="password" Placeholder="Password" class="full-width " style="height: 40px;">
+                <i class="far fa-eye pt-2" id="togglePassword" style="font-size: 20px; margin-left: -40px;" ></i>
+            </div>
+            <div class="row ">
+                <button type="button" class="button btn-primary full-width " style="height: 45px; box-shadow: 2px 2px 2px 2px  #b6b6b6" >     Login    </button>
+            </div>
+            <div class="row px-5 pt-2 mt-2" style="text-align: center; cursor: inherit;">
+                New to Shopper's Stop? <nav><a routerLink="/signup" routerLinlActive="active">Create Account</a></nav>
+            </div> 
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+
+</ion-content>
