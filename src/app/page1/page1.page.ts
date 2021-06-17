@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,16 +7,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page1.page.scss'],
 })
 export class Page1Page implements OnInit {
+  users=[];
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  //    this.http.get('https://www.autonise.com/api/course/catalog/').subscribe((result:any) =>{
+  //   console.log(result);
+  //  })
+   }
 
   ngOnInit() {
   }
-  username:any;
+  name:any;
+  
   password:any;
 
   loginMe(){
-    console.log(this.username,this.password);
+  
+    
+    
+
+   this.http.post('http://127.0.0.1:8000/ecomapp/login',{email:this.name,password:this.password}).subscribe((res:any)=>{
+     
+     alert(res.message);
+     
+   }
+   
+   )
+   
+   if (this.name==null ||this.password==null)
+     {
+       alert("fill in required fields");
+     
+     }
+  
+     return true;
   }
 
 }

@@ -13,3 +13,13 @@ a:link {
   a:active {
     text-decoration: underline;
   }
+  .lastChild{
+    right: 0px;
+    left: auto;
+}
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  
+  transform: translate(-50%, 0) !important;
+}

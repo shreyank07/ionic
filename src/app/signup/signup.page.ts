@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
 import { UserService } from '../user.service';
 
@@ -9,11 +10,11 @@ import { UserService } from '../user.service';
 })
 export class SignupPage implements OnInit {
  
-  user:any=[]
-  constructor(private userinfo: UserService) { }
+  users=[];
+  constructor(private http: HttpClient) { }
 
   ngOnInit():void{
-    this.user=this.userinfo.getdata()
+    // this.user=this.userinfo.getdata()
     
   }
   
@@ -23,7 +24,23 @@ export class SignupPage implements OnInit {
   number:any;
 
   loginMe(){
-    console.log(this.firstname,this.email);
+    // console.log(this.firstname,this.email);
+    this.http.post('http://127.0.0.1:8000/ecomapp/register',{name:this.firstname,email:this.email,password:this.password}).subscribe((res:any)=>{
+      this.users=res.users;
+      console.log(this.users,res.message);
+      alert(res.message);
+      
+    }
+    
+    )
+    
+    if (this.firstname==null || this.email==null||this.password==null)
+      {
+        alert("fill in required fields");
+      
+      }
+   
+      return true;
   }
   }
   

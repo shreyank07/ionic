@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import {FooterComponent} from '../footer/footer.component';
 
 import { Page1PageRoutingModule } from './page1-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 
 import { Page1Page } from './page1.page';
 
@@ -14,7 +15,8 @@ import { Page1Page } from './page1.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    Page1PageRoutingModule
+    Page1PageRoutingModule,
+    HttpClientModule
   ],
   declarations: [Page1Page,NavbarComponent,FooterComponent]
 })

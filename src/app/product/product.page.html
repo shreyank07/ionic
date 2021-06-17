@@ -12,18 +12,18 @@
         <div class="col-md">
 
             <div class="side_view">
-                <a href="#"><img src="https://images.unsplash.com/photo-1621757787548-4d0cc5a6bf71?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct1.jpg"
                     onclick="change(this.src)" class="productImage"></a>
-                <a href="#"><img src="https://images.unsplash.com/photo-1620550580806-9426033a77a3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct2.jpg"
                     onclick="change(this.src)" class="productImage"></a>
-                <a href="#"><img src="https://images.unsplash.com/photo-1621844070735-4663c691a4af?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct3.jpg"
                     onclick="change(this.src)" class="productImage"></a>
-                <a href="#"><img src="https://images.unsplash.com/photo-1620407018121-0d1a3540f216?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct4.jpg"
                     onclick="change(this.src)" class="productImage"></a>
             </div>
 
             <div class="main_view">
-                <img src="https://images.unsplash.com/photo-1621757787548-4d0cc5a6bf71?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" id="main" alt="IMAGE">
+                <img src="http://127.0.0.1:8000/static/product4.jpg" style="padding: 100px;padding-top: 0%;" id="main" alt="IMAGE">
             </div>
 
 
@@ -93,7 +93,7 @@
                     <h5 class="pt-4">PRODUCT DETAILS</h5>
                     <hr>
                     <div class="details">
-                        <p><span>Color</span><span class = "detailsText"> - Text goes here</span></p>
+                        <p><span>Color</span><span class = "detailsText" *ngFor='let p of users'>{{p.color}} </span></p>
                         <p><span>Weight</span><span class = "detailsText"> - Text goes here</span></p>
                         <p><span>Material</span><span class="detailsText"> - Text goes here</span></p>
                         <p><span>Dimensions</span><span class="detailsText"> - Text goes here</span></p>
@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row pt-0">
         <div class="col-md-6">
             <div class="row justify-content-center pt-4">
                 <a href="#">
