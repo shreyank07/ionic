@@ -1,9 +1,9 @@
 <ion-header>
-  
+    <app-navbar></app-navbar>
 </ion-header>
 
 <ion-content>
-    <app-navbar></app-navbar>
+    
   <div class="container-fluid">
     <div class="row p-4">
         <p style="color:#ababab;">Home > Men > Tshirts > Blue-Neck Tshirt</p>
@@ -12,18 +12,18 @@
         <div class="col-md">
 
             <div class="side_view">
-                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct1.jpg"
-                    onclick="change(this.src)" class="productImage"></a>
-                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct2.jpg"
-                    onclick="change(this.src)" class="productImage"></a>
-                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct3.jpg"
-                    onclick="change(this.src)" class="productImage"></a>
-                <a href="#"><img src="http://127.0.0.1:8000/static/subproduct4.jpg"
-                    onclick="change(this.src)" class="productImage"></a>
+                <a><img src="http://127.0.0.1:8000/static/subproduct1.jpg"
+                    (click)="change(0)" class="productImage"></a>
+                <a><img src="http://127.0.0.1:8000/static/subproduct2.jpg"
+                    (click)="change(1)" class="productImage"></a>
+                <a><img src="http://127.0.0.1:8000/static/subproduct3.jpg"
+                    (click)="change(2)" class="productImage"></a>
+                <a><img src="http://127.0.0.1:8000/static/subproduct4.jpg"
+                    (click)="change(3)" class="productImage"></a>
             </div>
 
             <div class="main_view">
-                <img src="http://127.0.0.1:8000/static/product4.jpg" style="padding: 100px;padding-top: 0%;" id="main" alt="IMAGE">
+                <img src={{main_img}} style="padding: 100px;padding-top: 0%;" id="main" alt="IMAGE">
             </div>
 
 
@@ -123,9 +123,7 @@
 
 <script>
     
-    const change = src => {
-    document.getElementById('main').src = src
-}
+
 </script>
 <app-footer></app-footer>
 

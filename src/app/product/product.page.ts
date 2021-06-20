@@ -19,4 +19,13 @@ export class ProductPage implements OnInit {
   ngOnInit() {
   }
 
+side_img = ["http://127.0.0.1:8000/static/subproduct1.jpg", "http://127.0.0.1:8000/static/subproduct2.jpg", "http://127.0.0.1:8000/static/subproduct3.jpg", "http://127.0.0.1:8000/static/subproduct4.jpg"]
+main_img : string = this.side_img[0];
+
+change(index){
+  this.main_img = this.side_img[index]
+}
+
+
+
 }
