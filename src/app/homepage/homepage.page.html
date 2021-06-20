@@ -12,7 +12,20 @@
         <div class="col-md-6 " ><strong style="font-size: 25px;">BEST SELLER OF THE SEASON</strong><br style="font-size: 10px;">Loerum ipsum sentence ipsum sentence<br>ipsum sentence loerum sentence </div>
         <div class="col-md-3"></div>
     </div>
-    <div class="row text-center  ml-5 py-0 pt-5"style="padding: 50px; " >
+    <div class="row   ml-0 py-0 px-5 pt-5"  >
+    <div class="col-md-3 mb-5 " style="text-align: center;" *ngFor='let prod of popularswear' routerLink="/product" [queryParams]="{_id: prod._id }">
+          
+        <div class="col-md-12 card ">
+          <div class="row " style="height: 270px; text-align: center;">
+              <img src="{{prod.picture}}" style="height: 300px;width: 99%;display: block; object-fit: cover; padding-left: 5px;">
+          </div>
+          <div style="padding-top:28px ;">{{prod.productname}}</div>
+          <div class="price" style="padding-bottom: 10px;"><s>{{prod.oldprice}}</s><b>  {{prod.price}}</b></div>
+          <p><button>Add to Cart</button></p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row text-center  ml-5 py-0 pt-5"style="padding: 50px; " >
         <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/t-shirt1.jpg" class="image-hover-highlight" style=" height: 250px; "></div>
         <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/t-shirt6.jpg" class="image-hover-highlight"style=" height: 250px; "></div>
         <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/t-shirt3.jpg" class="image-hover-highlight"style=" height: 250px; "></div>
@@ -35,7 +48,7 @@
         <div class="col-md-2 mx-5"><strong>product name</strong><br><s>$0.00</s><strong> $0.00</strong></div>
         <div class="col-md-2 mx-5"><strong>product name<br>$0.00</strong></div>
         <div class="col-md-2 mx-5"><strong>product name</strong><br><s>$0.00</s><strong> $0.00</strong></div>
-    </div>
+    </div> -->
     <div class="row ml-5 " style="padding-left: 50px;">
         <div class="col-md-5"></div>
         <div class="col-md-5"><button class="button btn-primary"><strong>VIEW ALL</strong></button></div>
