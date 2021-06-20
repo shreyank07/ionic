@@ -3,8 +3,128 @@
 </ion-header>
 
 <ion-content>
+    <app-navbar></app-navbar>
+    <div class="container-fluid ">
+        <div class="row m-5">
+            <div class="col-md-1 p-1" style="height:auto">
+                <div class="row mb-3" style="height: 100px; width: 100px; background-color: #d6eefa;"> 
+                    <img src={{picture}} style="height: 100px; width: 100px; display: block; object-fit: cover; ">
+                </div>
+                <div class="row mb-3" style="height: 100px; width: 100px; background-color: #d6eefa;"> 
+                    <img src={{picture}} style="height: 100px; width: 100px; display: block; object-fit: cover; ">
+                </div>
+                <div class="row mb-3" style="height: 100px; width: 100px; background-color: #d6eefa;"> 
+                    <img src={{picture}} style="height: 100px; width: 100px; display: block; object-fit: cover; ">
+                </div>
+                <div class="row mb-3" style="height: 100px; width: 100px; background-color: #d6eefa;"> 
+                    <img src={{picture}} style="height: 100px; width: 100px; display: block; object-fit: cover; ">
+                </div>
+            </div>
+            <div class="col-md-4 p-1" style="height:auto;">
+                <div class="row " >
+                    <img src={{picture}} style="height: 600px ;width: 450px; display: block; object-fit: cover; ">
+                </div>
     
-  <div class="container-fluid">
+                <div class="row mt-3">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <a href="#" class="fa fa-facebook"></a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="fa fa-twitter"></a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="fa fa-pinterest"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 "  >
+                <div class="row py-2" style="font-weight: bolder;font-size: 22px;"> 
+                    {{product}}
+                </div>
+                <div class="row py-2" style="font-weight: bold;font-size: 25px;">
+                    {{price}}
+                </div>
+                
+                <div class="row pb-3"  >
+                    <button class="sizebutton mr-2" style="width: 100px; color: black;">SMALL</button>
+                    <button class="sizebutton mx-2" style="width: 100px;color: black;">MEDIUM</button>
+                    <button class="sizebutton mx-2" style="width: 100px;color: black;">LARGE</button>
+                </div>
+                
+                <div class="row py-3 ">
+                    <div class="col-md-5 ">
+                        <button type="button" class="loginbutton px-5" style="width: 300px;font-weight: bold;" >BUY NOW</button>
+                    </div>
+                    <div class="col-md-5">
+                        <button type="button" class="lbutton px-5" style="width: 300px;font-weight: bold;">ADD TO CART</button>
+                    </div>
+    
+                </div>
+                <div class="row py-3">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-3  pt-2">
+                                <i class="material-icons" style="font-size:30px">local_airport</i>
+                            </div>
+                            <div class="col-md-9 " style="font-size: 15px;">
+                                <b>ORDERS SHIP</b> <br> in 5 business days
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row" >
+                            <div class="col-md-3  pt-2">
+                                <i class='fas fa-shipping-fast' style="font-size: 25px; " ></i> 
+                            </div>
+                            <div class="col-md-9 " style="font-size: 15px;">
+                                <b>FREE</b> <br> Shipping
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-2  pt-2">
+                                <i class="fas fa-thumbs-up" style="font-size: 25px; "></i>
+                            </div>
+                            <div class="col-md-10 " style="font-size: 15px;">
+                                <b>30 Days</b> <br> Return and Refund
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-3  pt-2">
+                                <i class="fas fa-check-circle" style="font-size: 30px;"></i>
+                            </div>
+                            <div class="col-md-9 " style="font-size: 15px;">
+                                <b>Secure</b> <br> Payments
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row pt-2" style="font-weight: bold;">
+                    PRODUCT DETAILS
+                </div>
+                <hr width="110%" color="grey">  
+                <div class="row py-1" style="font-size: 14px;">
+                    <b>Color</b> - {{color}}
+                </div>
+                <div class="row py-1" style="font-size: 14px;">
+                    <b>weight</b> - {{weight}}
+                </div>
+                <div class="row py-1" style="font-size: 14px;">
+                    <b>dimension</b> - {{dimension}}
+                </div>
+                <div class="row py-1" style="font-size: 14px;">
+                    <b>warranty</b> - {{warranty}}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  <!-- <div class="container-fluid">
     <div class="row p-4">
         <p style="color:#ababab;">Home > Men > Tshirts > Blue-Neck Tshirt</p>
     </div>
@@ -119,7 +239,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <script>
     

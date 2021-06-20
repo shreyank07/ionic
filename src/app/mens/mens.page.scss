@@ -54,17 +54,52 @@ color: orange;
         transition: all 0.50s;
     }
 }
-.zoom {
-    padding: 50px;
-    background-color:rgb(216, 214, 214);
-    transition: transform .2s;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
   }
   
-  .zoom:hover {
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
+  .price {
+    color: grey;
+    font-size: 22px;
   }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card:hover {
+      -ms-transform: scale(1.1); /* IE 9 */
+      -webkit-transform: scale(1.1); /* Safari 3-8 */
+      transform: scale(1.1); 
+    }
+// .zoom {
+//     padding: 50px;
+//     background-color:rgb(216, 214, 214);
+//     transition: transform .2s;
+//     width: 200px;
+//     height: 200px;
+//     margin: 0 auto;
+//   }
+  
+//   .zoom:hover {
+//     -ms-transform: scale(1.1); /* IE 9 */
+//     -webkit-transform: scale(1.1); /* Safari 3-8 */
+//     transform: scale(1.1); 
+//   }
+//   .productCards{
+//       padding-left: 10px;
+//       padding-right: 10px;
+//       text-align:center;
+//   }
