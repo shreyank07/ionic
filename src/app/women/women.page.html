@@ -1,0 +1,89 @@
+<ion-header>
+  <app-navbar></app-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="container-fluid px-5">
+
+    <div class="row">
+      <div class="col-md mt-4">
+        <strong>
+          <h1>WOMEN {{wValue}} </h1>
+        </strong>
+      </div>
+    </div>
+
+    <div class="row align-middle mt-3">
+      <div class="col-md-3 mt-2">
+        <kbd>FILTERS</kbd>
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col-md">
+        <mat-form-field appearance="fill" class="pr-4">
+          <mat-label>Category</mat-label>
+          <mat-select [(value)]="wValue">
+            <mat-option value="TOPS">Tops</mat-option>
+            <mat-option value="SAREES">Sarees</mat-option>
+            <mat-option value="KURTAS">Kurtas</mat-option>
+            <mat-option value="JEANS">Jeans</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="px-4 ">
+          <mat-label>Color</mat-label>
+          <mat-select [(value)]="yoo">
+            <mat-option value="Red" class="bg-danger text-white">Red</mat-option>
+            <mat-option value="Green" class="bg-success text-white">Green</mat-option>
+            <mat-option value="Blue" class="bg-primary text-white">Blue</mat-option>
+            <mat-option value="Yellow" class="bg-warning text-white">Yellow</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="px-4">
+          <mat-label>Price</mat-label>
+          <mat-select>
+            <mat-option value="P1">500-1000</mat-option>
+            <mat-option value="P2">1000-2000</mat-option>
+            <mat-option value="P3">3000-4000</mat-option>
+            <mat-option value="P4">4000-5000</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="px-4">
+          <mat-label>Sort By</mat-label>
+          <mat-select>
+            <mat-option value="S1">Popularity</mat-option>
+            <mat-option value="S2">Discount</mat-option>
+            <mat-option value="S3">What's New?</mat-option>
+            <mat-option value="S4">Rating</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row text-center cardBody mt-2 mx-5">
+      <div class="col-md-3">
+        <div class="card">
+          <div [routerLink]="['product','1']" style="cursor: pointer;">
+            <figure>
+              <img
+                src="https://static2.cilory.com/189111-thickbox_default/no-logo-royal-blue-full-sleeves-henley-t-shirt.jpg"
+                alt="t-shirt">
+            </figure>
+          </div>
+          <section class="details">
+            <div class="min-details">
+              <h1>Remera <span>azul</span></h1>
+              <h1 class="price">$45.99</h1>
+            </div>
+            <a class="btn">add to cart</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>

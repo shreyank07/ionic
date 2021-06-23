@@ -9,7 +9,6 @@ import {NavbarComponent} from '../navbar/navbar.component';
 import {FooterComponent} from '../footer/footer.component';
 
 import { MensPage } from './mens.page';
-import { from } from 'rxjs';
 
 @NgModule({
   imports: [

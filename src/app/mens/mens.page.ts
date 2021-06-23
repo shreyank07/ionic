@@ -14,8 +14,6 @@ export class MensPage implements OnInit {
   ngOnInit() {
     this.http.get('http://127.0.0.1:8000/ecomapp/mens').subscribe((result:any)=>{
       this.menswear=result.product;
-      console.log(this.menswear);
-
     })
 
   }

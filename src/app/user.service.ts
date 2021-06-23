@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -7,14 +8,10 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   getdata(){
-    return [
-      {"name":"ShreyankLadekar","email":"Shreyank@autonise.com"},
-     
-      
-    ]
+    return this.http.get("http://127.0.0.1:8000/id")
   }
 
 

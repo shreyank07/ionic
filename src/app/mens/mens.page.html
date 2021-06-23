@@ -51,7 +51,8 @@
         </div>
         <div class="row ml-0 py-0 px-5 pt-5">
             <div class="col-md-3 px-2  text-center">
-                <div [routerLink]="['/product' , '1']" routerLinkActive="active" style=" height: 350px; cursor: pointer; ">
+                <div [routerLink]="['product']" routerLinkActive="active"
+                    style=" height: 350px; cursor: pointer; ">
                     <img src="http://127.0.0.1:8000/static/product4.jpg" class="image-hover-highlight zoom"
                         style=" height: 350px; width: 85%;padding: 20px;">
                 </div>
@@ -75,7 +76,7 @@
             <div class="col-md-3 px-2 text-center ">
                 <div><strong>product name<br>$0.00</strong></div>
             </div>
-            <div class="col-md-3 px-2 text-center "> 
+            <div class="col-md-3 px-2 text-center ">
                 <div><strong>product name<br>$0.00</strong></div>
             </div>
             <div class="col-md-3 px-2 text-center">
@@ -174,56 +175,9 @@
 
         </div>
 
-    </div>
-    <div class="row   ">
-     <div class="col-md-2 full-width ">
-         <select name="category" id="category" style="width: 200px; height: 40px;">
-             <option value="Tshirts"><strong>Tshirts</strong></option>
-             <option value="Round neck"><strong>Round neck</strong></option>
-             <option value="Kurtas"><strong>Kurtas</strong></option>
-             <option value="Shirts"><strong>Shirts</strong></option>
-           </select>
-     </div>
-     <div class="col-md-2">
-         <select name="color" id="color" style="width: 200px; height: 40px;">
-             <option value="blue"><strong>blue</strong></option>
-             <option value="red "><strong>Red</strong></option>
-             <option value="pink"><strong>pink</strong></option>
-             <option value="yellow"><strong>yellow</strong></option>
-           </select>
-     </div>
-     <div class="col-md-2">
-         <select name="price" id="price" placeholder="select" style="width: 200px; height: 40px;">
-             <option value="500-1000"><strong>500-1000</strong></option>
-             <option value="1000-1500"><strong>1000-1500</strong></option>
-             <option value="1500-3000"><strong>1500-3000</strong></option>
-             <option value="3000-5000"><strong>3000-5000</strong></option>
-           </select>
-     </div>
-     <div class="col-md-2">
-         <select name="sort" id="sort" style="width: 200px; height: 40px;">
-             <option value="Popularity"><strong>Popularity</strong></option>
-             <option value="Price high-low"><strong>Price high-low</strong></option>
-             <option value="Price low-high"><strong>Price low-high</strong></option>
-             <option value="Brand"><strong>Brand</strong></option>
-           </select>
-     </div>
-     <div class="col-md-2"></div>
- </div>
-     <div class="row   ml-0 py-0 px-5 pt-5"  >
-        <div class="col-md-3 mb-5 " style="text-align: center;" *ngFor='let prod of menswear' routerLink="/product" [queryParams]="{_id: prod._id }">
-          
-            <div class="col-md-12 card ">
-              <div class="row " style="height: 270px; text-align: center;">
-                  <img src="{{prod.picture}}" style="height: 300px;width: 99%;display: block; object-fit: cover; padding-left: 5px;">
-              </div>
-              <div style="padding-top:28px ;">{{prod.productname}}</div>
-              <div class="price" style="padding-bottom: 10px;"><s>{{prod.oldprice}}</s><b>  {{prod.price}}</b></div>
-              <p><button>Add to Cart</button></p>
-            </div>
-          </div>
 
-         <!-- <div class="col-md-3 px-2 " >
+
+            <!-- <div class="col-md-3 px-2 " >
              
              <nav><a routerLink="/product" routerLinlActive="active"  ><div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product4.jpg"class="image-hover-highlight zoom" style=" height: 350px; width: 85%;padding: 20px;"></div></a></nav>
          </div>
@@ -251,8 +205,8 @@
          <div class="col-md-3 px-2 ">
              <div><strong>product name<br>$0.00</strong></div>
          </div> -->
-     </div>
-     <!-- <div class="row   ml-0 py-0  px-5 pt-5"  >
+    </div>
+        <!-- <div class="row   ml-0 py-0  px-5 pt-5"  >
          <div class="col-md-3 px-2 " >
             <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product5.jpg"class="image-hover-highlight zoom " style=" height: 350px; width: 85%;padding: 20px;"></div>
          </div>
@@ -310,20 +264,8 @@
              <div><strong>product name<br>$0.00</strong></div>
          </div>
      </div> -->
-     
-     <div class="row ml-5 pt-4" >
-         <div class="col-md-4"></div>
-         <div class="col-md-4"><button class="button btn-primary" style="width: 400px;height: 40px;"><strong>VIEW ALL PRODUCTS</strong></button></div>
-         <div class="col-md-4"></div>
-     </div>
-     
-     <div class="row text-center mt-0 ml-5 py-0 pt-5 text-center"style="padding-left: 250px;  " >
-        <div class="col-md-2 mx-5 " style=" height: 250px;padding-bottom: 15px; "><img src="http://127.0.0.1:8000/static/jackets.jpg "class="image-hover-highlight  zoom" style=" height: 250px; "><p style="font-size: 23px; "><strong>Jackets</strong></p></div>
-        <div class="col-md-2 mx-5 " style=" height: 250px;padding-bottom: 15px; "><img src="http://127.0.0.1:8000/static/dresses.jpg"class="image-hover-highlight  zoom" style=" height: 250px; "><p style="font-size: 23px; "><strong>Dressses</strong></p></div>
-        <div class="col-md-2 mx-5 " style=" height: 250px;padding-bottom: 15px; "><img src="http://127.0.0.1:8000/static/watches.jpg"class="image-hover-highlight  zoom" style=" height: 250px; "><p style="font-size: 23px; "><strong>Watches</strong></p></div>
-         
-     </div>
-     
- </div>
- <app-footer></app-footer>
+
+
+
+        <app-footer></app-footer>
 </ion-content>
