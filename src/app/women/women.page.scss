@@ -19,16 +19,15 @@ h1 {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   height: 300px;
   overflow: hidden;
-  width: 90%;
+  width: 80%;
 }
 
 .card > figure {
-  width: 90%;
-  margin: 20px auto 0 auto;
+  width: 100%;
 }
 
 .card > figure > img {
-  width: 80%;
+  width: 100%;
 }
 
 .details {
@@ -43,7 +42,7 @@ h1 {
 
 .card:hover .details {
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
-  top: 40%;
+  top: 30%;
 }
 
 .details > .min-details
@@ -59,9 +58,11 @@ h1 {
 .details > .min-details > h1{
     font-family: "Ubuntu", sans-serif; 
     font-weight:600;
+    text-align: left;
+    font-size: medium;
 }
 
-.details > .min-details > h1 > span {
+.details > .min-details > h1 > span.sub {
   color: #7b7b7b;
   display: block;
   font-size: 0.9rem;
@@ -86,4 +87,8 @@ h1 {
 .btn:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
+}
+
+.price{
+  color:rgb(243, 129, 129);
 }

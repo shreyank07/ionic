@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-product',
@@ -8,54 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
-  product;
-  price;
-  picture;
-  color;
-  weight;
-  dimension;
-  warranty;
-  _id:string;
 
-
-  constructor(private http:HttpClient,private activatedroute:ActivatedRoute) { 
-      console.log(this.color);
-  }
+  id: any;
+  data:any;
+  category:any;
+  constructor(
+    private http: HttpClient,
+    private activatedroute: ActivatedRoute,
+    private service : UserService
+  ) {}
 
   ngOnInit() {
-    this.activatedroute.queryParams.subscribe(params=>{
-      this._id=params._id;
-      
+    this.activatedroute.queryParams.subscribe((params) => {
+      this.id = params['id']
+      this.category = params['category']
+      console.log(this.id);
+    });
+    this.service.getdata2().subscribe(data=>{
+      this.data = data[this.category][this.id]
+      console.log(this.data)
     })
-    this.http.post('http://127.0.0.1:8000/ecomapp/mensproduct',{_id:this._id}).subscribe((res:any)=>{
-      this.picture=res.picture;
-      this.price=res.price;
-      this.color=res.color;
-      this.weight=res.weight;
-      this.dimension=res.dimension;
-      this.warranty=res.warranty;
-      this.product=res.product;
-    })
-    this.http.post('http://127.0.0.1:8000/ecomapp/homeproduct',{_id:this._id}).subscribe((res2:any)=>{
-      this.picture=res2.picture;
-      this.price=res2.price;
-      this.color=res2.color;
-      this.weight=res2.weight;
-      this.dimension=res2.dimension;
-      this.warranty=res2.warranty;
-      this.product=res2.product;
-    })
-    
-      }
-      
 
-side_img = ["http://127.0.0.1:8000/static/subproduct1.jpg", "http://127.0.0.1:8000/static/subproduct2.jpg", "http://127.0.0.1:8000/static/subproduct3.jpg", "http://127.0.0.1:8000/static/subproduct4.jpg"]
-main_img : string = this.side_img[0];
-
-change(index){
-  this.main_img = this.side_img[index]
-}
-
-
-
+  }
 }

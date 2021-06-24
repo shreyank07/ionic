@@ -1,78 +1,156 @@
-<div class="container-fluid" style="background-color: black;">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow" style="background-color: rgb(105, 163, 182);">
-    <a class="navbar-brand" style="font-size: 30px; color: rgb(9, 4, 109); font-style: oblique;" href="#"><strong><u>SHOPPER'S STOP</u></strong></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<div class="container-fluid" style="background-color: black">
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light box-shadow"
+    style="background-color: rgb(105, 163, 182)"
+  >
+    <a
+      class="navbar-brand"
+      style="font-size: 30px; color: rgb(9, 4, 109); font-style: oblique"
+      href="#"
+      ><strong><u>SHOPPER'S STOP</u></strong></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <nav><a routerLink="/homepage" routerLinlActive="active" class="nav-link" style="color: black;" >HOME </a></nav>
+          <nav>
+            <a
+              routerLink="/homepage"
+              routerLinlActive="active"
+              class="nav-link"
+              style="color: black"
+              >HOME
+            </a>
+          </nav>
         </li>
         <li class="nav-item">
-          <nav><a routerLink="/mens" routerLinlActive="active" class="nav-link" style="color: black ">MEN</a></nav>
+          <nav>
+            <a
+              routerLink="/mens"
+              routerLinlActive="active"
+              class="nav-link"
+              style="color: black"
+              >MEN</a
+            >
+          </nav>
         </li>
         <li class="nav-item">
-            <a routerLink = "/women" class="nav-link" style="color: black "href="#">WOMEN</a>
-          </li>
-        
+          <a
+            [routerLink]="['/women']"
+            [queryParams] = "{'category' : 'KURTAS'}"
+            class="nav-link"
+            style="color: black"
+            href="#"
+            >WOMEN</a
+          >
+        </li>
+
         <li class="nav-item">
-          <a class="nav-link" style="color: black;" href="#">WATCHES</a>
+          <a class="nav-link" style="color: black" href="#">WATCHES</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="color: black;" href="#">OFFERS</a>
-          </li>
+          <a class="nav-link" style="color: black" href="#">OFFERS</a>
+        </li>
       </ul>
       <nav class="navbar navbar-expand-sm">
-
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#"
+              ><i class="material-icons iconstyle icon-color px-3"
+                >&#xe8b6;</i
+              ></a
+            >
+          </li>
 
-        
-        
-        
-        <li class="nav-item"> <a href="#"><i class="material-icons iconstyle icon-color px-3">&#xe8b6;</i></a> </li>
+          <li class="nav-item">
+            <a
+              class="nav-link dropdown-toggle nav-item dropdown"
+              style="padding: 5px; padding-top: 0px"
+              href="#"
+              id="dropdownMenuButton"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ><i class="material-icons iconstyle icon-color">&#xe7fd;</i>
 
-        <li class="nav-item"><a class="nav-link dropdown-toggle nav-item dropdown " style="padding: 5px; padding-top: 0px" href="#" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons iconstyle icon-color">&#xe7fd;</i>
-        
-          <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
-          
-            <nav><a class="dropdown-item" routerLink="/profile" routerLinlActive="active">
-            <div *ngFor="let u of user">
-              <p style="font-size: 20px;color: blue;">{{u.name}}<br><a style="font-size: 15px; color: black;margin-top: 0%;" href="#">{{u.email}}</a></p>
-              <!-- <a style="margin-top: 0%; "href="#">{{u.email}}</a> -->
-            </div>
-            
-            </a></nav>
-          
-          
-          <div class="dropdown-divider"></div>
-          <nav><a class="dropdown-item" routerLink="/profile" routerLinlActive="active">Profile</a></nav>
-          
-          <nav><a class="dropdown-item" routerLink="/history" routerLinlActive="active">Order History</a></nav>
-          
-          <div class="dropdown-divider"></div>
-          
-          <nav><a class="dropdown-item"  style="color: red;"routerLink="/page1" routerLinlActive="active">Logout</a>
-          
-          </nav>
-          
-          </div>
-          
-          </a></li>
-        
-        <li class="nav-item"><a href="#"><i class="material-icons iconstyle icon-color px-3 ">&#xe854;</i></a></li>
-        
-        
-        
+              <div
+                class="dropdown-menu dropdown-menu-center"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <nav>
+                  <a
+                    class="dropdown-item"
+                    routerLink="/profile"
+                    routerLinlActive="active"
+                  >
+                    <div *ngFor="let u of user">
+                      <p style="font-size: 20px; color: blue">
+                        {{ u.name }}<br /><a
+                          style="font-size: 15px; color: black; margin-top: 0%"
+                          href="#"
+                          >{{ u.email }}</a
+                        >
+                      </p>
+                      <!-- <a style="margin-top: 0%; "href="#">{{u.email}}</a> -->
+                    </div>
+                  </a>
+                </nav>
+
+                <div class="dropdown-divider"></div>
+                <nav>
+                  <a
+                    class="dropdown-item"
+                    routerLink="/profile"
+                    routerLinlActive="active"
+                    >Profile</a
+                  >
+                </nav>
+
+                <nav>
+                  <a
+                    class="dropdown-item"
+                    routerLink="/history"
+                    routerLinlActive="active"
+                    >Order History</a
+                  >
+                </nav>
+
+                <div class="dropdown-divider"></div>
+
+                <nav>
+                  <a
+                    class="dropdown-item"
+                    style="color: red"
+                    routerLink="/page1"
+                    routerLinlActive="active"
+                    >Logout</a
+                  >
+                </nav>
+              </div>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#"
+              ><i class="material-icons iconstyle icon-color px-3"
+                >&#xe854;</i
+              ></a
+            >
+          </li>
         </ul>
-        
-        </nav>
-      
+      </nav>
     </div>
   </nav>
 </div>
-
-  
-
-
