@@ -1,0 +1,155 @@
+{
+  "KURTAS" : [
+    {
+      "name" : "Anouk",
+      "subname" : "Printed Straight Kurta",
+      "price" : 676,
+      "color" : "Blue",
+      "material" : "Silk",
+      "weight" : 540,
+      "manufacturer" : "Limited",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/5571465/2018/5/15/2ac3672a-d16d-4aec-b853-30a3f50708021526387316249-Jaipur-Kurti-Women-Turquoise-Blue--Green-Printed-Straight-Kurta-5621526387316032-1.jpg"
+    },
+    {
+      "name" : "Soch",
+      "subname" : "Women Kurta",
+      "price" : 998,
+      "color" : "Blue",
+      "material" : "cotton",
+      "weight" : 550,
+      "manufacturer" : "Looptoes",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11369460/2020/10/16/12cd2a09-b5b9-452f-909a-88335ccc93d21602848407974KurtasWWomenKurtasWWomenKurtasWWomen1.jpg"
+    },   {
+      "name" : "Libas",
+      "subname" : "Anarkali",
+      "price" : 639,
+      "color" : "Blue",
+      "material" : "denim",
+      "weight" : 450,
+      "manufacturer" : "Shivalis",
+      "src" :"https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/14080352/2021/6/16/2118ce1b-598a-4d93-ac7b-a550eddcd21c1623819833403-all-about-you-Women-Kurtas-2571623819832974-1.jpg"
+    },   {
+      "name" : "Taavi",
+      "subname" : "Hand Print Kurta",
+      "price" : 1169,
+      "color" : "Blue",
+      "material" : "cotton",
+      "weight" : 920,
+      "manufacturer" : "Prakash Ltd.",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10808392/2019/10/30/ace99bf5-e995-4f03-85a8-0d9602bda2c71572423096028-AHIKA-Women-Kurtas-6611572423093754-1.jpg"
+    },   {
+      "name" : "Ahika",
+      "subname" : "Floral Kurta",
+      "price" : 395 ,
+      "color" : "Blue",
+      "material" : "silk",
+      "weight" : "650",
+      "manufacturer" : "Triyas Ltd.",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12530312/2020/10/9/8cdcee27-1396-4572-8886-51797a12bd5d1602223585448-HERENOW-Women-Kurtas-2511602223583815-1.jpg"
+    },   {
+      "name" : "Moda Rapido",
+      "subname" : "Printed Kurta",
+      "price" : 669,
+      "color" : "Blue",
+      "material" : "cotton",
+      "weight" : 920,
+      "manufacturer" : "Sapphire Synthetics",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11369480/2020/1/31/b835a6da-f704-44bc-b85f-1a1049aa84bd1580451446557-W-Women-Blue--White-Printed-Straight-Kurta-821580451445628-1.jpg"
+    },   {
+      "name" :"Konaki",
+      "subname" : "Round Print Kurta",
+      "price" : 2136,
+      "color" : "Blue",
+      "material" : "silk",
+      "weight" : 860,
+      "manufacturer" : "Shreemaya Ethnics",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/8429331/2019/8/13/11121eb9-a8fc-4c98-bc09-b829def1b7fe1565693365854-W-Women-Blue-Solid-Straight-Kurta-3831565693364328-1.jpg"
+    },
+    {
+      "name": "NainVish",
+      "subname": "Krepe Kurti",
+      "price": 499,
+      "color": "Blue",
+      "material": "cotton",
+      "weight": "345",
+      "manufacturer": "Athena Fashions",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12218722/2020/9/4/7db683c0-dc92-4330-a694-33543c9baf4f1599218910818-AHIKA-Women-Blue--Green-Printed-Straight-Kurta-7781599218908-1.jpg"
+    }
+    ],
+  "SAREES" : [
+    {
+      "name": "Kalini",
+      "subname": "Pure Chiffon Saree",
+      "price": 1296,
+      "color": "Red",
+      "material": "Crepe",
+      "weight": 920 ,
+      "manufacturer": "Swastika Group",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11750010/2020/3/26/afa875ce-5a22-4f6e-83f5-4555576767851585226747400MiteraMaroonNavyBlueSilkBlendPartywearWovenDesignSareewithMa1.jpg"
+    },{
+      "name": "Mitera",
+      "subname":"Woven Banarasi Saree",
+      "price": 1418,
+      "color": "Red",
+      "material": "organza",
+      "weight": 1210,
+      "manufacturer": "Maheshwari Ltd.",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11750010/2020/3/26/15a9ea63-a7d8-4ea4-b3e0-723d9ed1e3de1585226747458MiteraMaroonNavyBlueSilkBlendPartywearWovenDesignSareewithMa2.jpg"
+    },{
+      "name": "Ishin",
+      "subname": "Solid Banarasi Saree",
+      "price": 597,
+      "color": "Red",
+      "material": "Silk",
+      "weight": 820 ,
+      "manufacturer": "DK Wholesales",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/6836227/2018/7/3/f55a2485-015c-49aa-b248-6e82b768b2c41530610234014-Saree-mall-Red-Silk-Blend-Woven-Design-Kanjeevaram-Saree-6651530610233821-2.jpg"
+    },{
+      "name": "Pavechas",
+      "subname": "Venkatgiri Saree",
+      "price": 547,
+      "color": "Red",
+      "material": "Chiffon",
+      "weight": 780 ,
+      "manufacturer": "Libas Collections" ,
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11458586/2020/3/9/8ceffc3d-917a-4e19-9b0c-4246ab2e00841583755292748-Mitera-Women-Sarees-641583755289965-2.jpg"
+    },{
+      "name": "Tikhli",
+      "subname": "Emroidered Saree",
+      "price": 1291,
+      "color": "Red",
+      "material": "Georgette",
+      "weight":1312 ,
+      "manufacturer": "Pataudi Sarees",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/6671060/2018/6/7/3afb00eb-c992-43a6-8985-2a5425eb488d1528352756229-Ishin-Poly-Silk-Red-Printed-Womens-SareeSari-With-Tassels-50-1.jpg"
+    },{
+      "name": "Inddus",
+      "subname":  "Striped Saree",
+      "price": 2267,
+      "color": "Red",
+      "material": "Brocada",
+      "weight": 723,
+      "manufacturer": "Chennai Skills",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12133812/2020/8/11/aa9dcb6d-4280-4049-89e5-836a1be8b6c91597117948909-PACHE-Red--Golden-Embroidered-Saree-2991597117947073-1.jpg"
+    },{
+      "name": "Sarkiri",
+      "subname": "Embellished Saree",
+      "price": 779,
+      "color": "Red",
+      "material": "Silk",
+      "weight": 567 ,
+      "manufacturer": "Jaya Fashions",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13427860/2021/2/12/d11a6d4b-fb28-4fbc-b22e-ea15159633821613113926170InddusRedOrangeStripedSaree1.jpg"
+    },{
+      "name": "Nagiri",
+      "subname": "Bandhani Saree",
+      "price": 1938,
+      "color": "Red",
+      "material": "Kalamkari",
+      "weight":  867,
+      "manufacturer": "Kashmiri Gondara Fashions",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/5/25/39c845a8-bea5-4fa1-a1d9-96aba0d90a611621940411719-1.jpg"
+    }
+  ]
+}
+
