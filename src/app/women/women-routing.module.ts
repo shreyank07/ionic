@@ -6,13 +6,10 @@ import { pathToFileURL } from 'url';
 
 import { WomenPage } from './women.page';
 const routes: Routes = [
+ 
   {
     path: '',
     component: WomenPage , 
-  },
-  {
-    path : 'product',
-    loadChildren: () => import('../product/product.module').then( m => m.ProductPageModule)
   }
 
 ];

@@ -15,8 +15,12 @@ export class UserService {
       {"name":"ShreyankLadekar","email":"Shreyank@autonise.com"}
     ]
   }
-  getdata2(){
-    return this.http.get("http://127.0.0.1:8000/data")
+  getdata2(category){
+    return this.http.get("http://127.0.0.1:8000/data" , {params : {'category' : category}})
+  }
+
+  getProductDetails(category){
+    return this.http.get("http://127.0.0.1:8000/product", {params : {'category' : category}} )
   }
 
 

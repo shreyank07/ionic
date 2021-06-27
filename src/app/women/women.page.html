@@ -1,5 +1,5 @@
 <ion-header>
-  <app-navbar></app-navbar>
+  
 </ion-header>
 
 <ion-content>
@@ -23,19 +23,28 @@
         <mat-form-field appearance="fill">
           <mat-label>Category</mat-label>
           <mat-select #category [(value)]="wValue">
-            <mat-option (click)="navigator('KURTAS')" value="KURTAS"
+            <mat-option
+              [routerLink]="['./']"
+              [queryParams]="{'category' : 'KURTAS'}"
+              value="KURTAS"
               >Kurtas</mat-option
             >
-            <mat-option (click)="navigator('TOPS')" value="TOPS"
+            <mat-option
+              [routerLink]="['./']"
+              [queryParams]="{'category' : 'TOPS'}"
+              value="TOPS"
               >Tops</mat-option
             >
             <mat-option
-              [routerLink]="['/women']"
+              [routerLink]="['./']"
               [queryParams]="{'category' : 'SAREES'}"
               value="SAREES"
               >Sarees</mat-option
             >
-            <mat-option (click)="navigator('JEANS')" value="JEANS"
+            <mat-option
+              [routerLink]="['./']"
+              [queryParams]="{'category' : 'JEANS'}"
+              value="JEANS"
               >Jeans</mat-option
             >
           </mat-select>
@@ -90,7 +99,7 @@
       >
         <div class="card">
           <div
-            [routerLink]="['product']"
+            [routerLink]="['/women/product']"
             [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
             style="cursor: pointer"
           >
@@ -99,7 +108,7 @@
           <section class="details">
             <div
               class="min-details"
-              [routerLink]="['product']"
+              [routerLink]="['/women/product']"
               [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
               style="cursor: pointer"
             >

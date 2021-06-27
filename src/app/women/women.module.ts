@@ -19,8 +19,10 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     IonicModule,
     WomenPageRoutingModule,
-    MatSelectModule
+    MatSelectModule,
+   
   ],
-  declarations: [WomenPage, NavbarComponent, FooterComponent, DropdownComponent]
+  declarations: [WomenPage, DropdownComponent, NavbarComponent, 
+    FooterComponent]
 })
 export class WomenPageModule {}

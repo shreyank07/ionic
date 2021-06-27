@@ -1,14 +1,328 @@
-.myorder {
-    width: 50px;
-    height: 50px;
-}
 @import url(//db.onlinewebfonts.com/c/c4a64740ecb71342cea0a87b66ee15e0?family=PhosphateInline);
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
 
 @font-face {
     font-family: "PhosphateInline";
     src: url("//db.onlinewebfonts.com/t/c4a64740ecb71342cea0a87b66ee15e0.eot");
     src: url("//db.onlinewebfonts.com/t/c4a64740ecb71342cea0a87b66ee15e0.eot?#iefix");
 }
+
+// .myorder {
+//     width: 50px;
+//     height: 50px;
+// }
+// @import url(//db.onlinewebfonts.com/c/c4a64740ecb71342cea0a87b66ee15e0?family=PhosphateInline);
+
+// @font-face {
+//     font-family: "PhosphateInline";
+//     src: url("//db.onlinewebfonts.com/t/c4a64740ecb71342cea0a87b66ee15e0.eot");
+//     src: url("//db.onlinewebfonts.com/t/c4a64740ecb71342cea0a87b66ee15e0.eot?#iefix");
+// }
+
+// body {
+//     font-family: 'ArgentumSansRegular';
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// p {
+//     margin: 3px
+// }
+
+// .text-color {
+//     color: cadetblue;
+// }
+
+// .full-width {
+//     width: 100%;
+// }
+
+// .bg-color {
+//     background-color: rgb(245, 239, 239);
+// }
+
+// .logincard {
+//     border: 1px solid black;
+//     padding: 50px;
+// }
+
+// .icon-color {
+//     color: black;
+// }
+
+// .payapps {
+//     width: 50px;
+//     height: 50px;
+// }
+
+// .font-color {
+//     color: rgb(172, 169, 169);
+// }
+
+// .shopperStop {
+//     font-family: PhosphateInline;
+//     color: #949494;
+// }
+
+// .navbar-nav {
+//     font-weight: 700 !important;
+//     font-size: 14px !important;
+// }
+
+
+
+// /* IMAGE BAR */
+
+
+// .main_view{
+    
+//     justify-content: center;
+    
+
+// }
+// .main_view img{
+//     width: 85%;
+//     height: 700px;
+//     object-fit: cover;
+//     justify-content: center;
+//     margin-left: 54px;
+    
+    
+// }
+// .side_view{
+//     display: flex;
+//     justify-content: center;
+//     flex-wrap: wrap;
+// }
+// .side_view img{
+//     width: 7rem;
+//     height: 8rem;
+//     object-fit: cover;
+//     cursor: pointer;
+//     margin:0.5rem;
+// }
+
+// /* Product information goes here */
+// .lightPara{
+//     color: #ababab;
+//     margin-top: 20px;
+// }
+// .lightPara .lightPara-second{
+//     margin-bottom: 20px;
+// }
+
+// .SMLbuttons{
+//     display: flex;
+// }
+//  .SMLbuttons button{
+//   color: #ababab;
+//   border: 2px solid #ababab;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 18px;
+//   width: 120px;
+//   margin-right: 10px;
+//   height: 50px;
+
+// }
+// .SMLbuttons button:hover{
+//     color: black;
+//     border : 2px solid black
+
+// }
+// .SMLbuttons button:focus{
+//     color:black;
+// }
+
+// .redLine{
+//     font-weight: bolder;
+//     color: #cc1a1a;
+// }
+
+// .addToCart button{
+//   color: white;
+//   border: none;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 20px;
+//   width: 120px;
+//   margin-right: 10px;
+//   background-color: #007fe7;
+//   width: 290px;
+//   height: 48px;
+// }
+
+// .addToCart button:focus{
+//     outline:3px solid #012e53;
+    
+// }
+
+// .addToCart button:hover{
+//     background-color: #0f67af;
+// }
+// .font-stretch {
+//     display: inline-block;
+//     -webkit-transform: scale(1,.9);
+//     -moz-transform: scale(1,.9);
+//     -ms-transform: scale(1,.9);
+//     -o-transform: scale(1,.9);
+//     transform: scale(1,.9);
+// }
+
+// .icon{
+//     width:50px;
+//     height: 45px;
+// }
+// .iconLine{
+//     margin-left: -10px;
+// }
+// .iconLineSmall{
+//     font-size: 11px;
+//     margin-top: -3px;
+// }
+
+// .productDetails{
+//     margin-left: -16px;
+//     margin-top: 15px;
+// }
+
+// .productDetails h5{
+//     font-weight: bolder;
+// }
+// .productDetails hr{
+//     margin-bottom: 1px;
+//     margin-top: 1px;
+//     border: 1px solid #ababab;
+//     margin-left: 1px;
+// }
+// .details{
+//     margin-top: 1px;
+//     margin-left: -2px;
+// }
+
+// .details p{
+//     margin-top: 11px;
+// }
+// .detailsText{
+//     color: #ababab;
+// }
+// .socialIcon{
+//     margin-right: 20px;
+// }
+// .fa-facebook-f.socialIcon{
+//     background-color: #207ffa;
+//     color: white;
+//     border-radius: 67px;
+//     padding-top: 7px;
+//     padding-right: 1px;
+//     height: 35px;
+//     width: 35px;
+//     font-size: 30px;
+//     text-align-last: center;
+// }
+// .fa-facebook-f.socialIcon:hover{
+//     background-color: #175ab3;
+// }
+// .fa-twitter.socialIcon{
+//     background-color: #25a9fa;
+//     color: white;
+//     padding-top: 6px;
+//     padding-left: 1px;
+//     border-radius: 67px;
+//     height: 35px;
+//     width: 35px;
+//     font-size: 25px;
+//     text-align-last: center;
+// }
+// .fa-twitter.socialIcon:hover{
+//     background-color: #1e7cb6;
+// }
+
+// .fa-pinterest.socialIcon{
+//     color:#c61921;
+//     border-radius: 67px;
+//     font-size: 41px;
+//     text-align-last: center;
+//     margin-top: -3px;
+// }
+// .fa-pinterest.socialIcon:hover{
+//     color:#7a1419;
+// }
+
+// .productImage:hover{
+//     outline: 3px solid black;
+// }
+// .side_view :focus img{
+//     outline: 3px solid blue;
+// }
+// .fa {
+//     padding: 10px;
+//     font-size: 20px;
+//     border-radius: 50%;
+//     width: 40px;
+// }
+  
+// .fa:hover {
+//       opacity: 0.7;
+// }
+  
+// .fa-facebook {
+//     background: #3B5998;
+//     color: white;
+    
+// }
+  
+// .fa-twitter {
+//     background: #55ACEE;
+//     color: white;
+// }
+// .fa-pinterest {
+//     background: #cb2027;
+//     color: white;
+// }
+// .loginbutton{
+//     height: 40px;
+//     width: 380px ;
+//     background-color: blue;
+//     text-align: center ;
+//     color: white;
+//     padding-top: 5px;
+//     padding-bottom: 5px;
+//     border: 2px solid blue ;
+//     box-shadow: 2px 2px 2px 2px  #b6b6b6;
+// }
+// .loginbutton:hover{
+//     color: blue;  
+//     background-color:white ;
+// }
+// .lbutton{
+//     height: 40px;
+//     width: 380px ;
+//     background-color: white;
+//     text-align: center ;
+//     color: blue;
+//     padding-top: 5px;
+//     padding-bottom: 5px;
+//     border: 2px solid blue ;
+//     box-shadow: 2px 2px 2px 2px  #b6b6b6;
+// }
+// .lbutton:hover{
+//     color:white;  
+//     background-color:blue ;
+// }
+ .sizebutton{
+    box-shadow: 2px 2px 2px 2px  #b6b6b6;
+    height: 40px;
+    width: 380px ;
+    color:rgb(250, 244, 244);
+}
+.sizebutton:hover{
+    color:yellow;
+}
+
+
 
 body {
     font-family: 'ArgentumSansRegular';
@@ -66,33 +380,20 @@ p {
 
 
 .main_view{
-    
+    display: flex;
     justify-content: center;
-    
+    flex-wrap: wrap;
 
 }
 .main_view img{
-    width: 85%;
-    height: 700px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     justify-content: center;
     margin-left: 54px;
     
     
 }
-.side_view{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.side_view img{
-    width: 7rem;
-    height: 8rem;
-    object-fit: cover;
-    cursor: pointer;
-    margin:0.5rem;
-}
-
 /* Product information goes here */
 .lightPara{
     color: #ababab;
@@ -131,30 +432,28 @@ p {
     color: #cc1a1a;
 }
 
-.addToCart button{
-  color: white;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  width: 120px;
-  margin-right: 10px;
-  background-color: #007fe7;
-  width: 290px;
-  height: 48px;
-}
-
-.addToCart button:focus{
-    outline:3px solid #012e53;
-    
-}
-
-.addToCart button:hover{
-    background-color: #0f67af;
-}
+.btn {
+    background-color: #192a56;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: 100%;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+  .btn:focus{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
 .font-stretch {
-    display: inline-block;
     -webkit-transform: scale(1,.9);
     -moz-transform: scale(1,.9);
     -ms-transform: scale(1,.9);
@@ -166,13 +465,7 @@ p {
     width:50px;
     height: 45px;
 }
-.iconLine{
-    margin-left: -10px;
-}
-.iconLineSmall{
-    font-size: 11px;
-    margin-top: -3px;
-}
+
 
 .productDetails{
     margin-left: -16px;
@@ -245,72 +538,26 @@ p {
 .productImage:hover{
     outline: 3px solid black;
 }
-.side_view :focus img{
-    outline: 3px solid blue;
+.side_view:hover{
+    background:white;
+    outline:3px solid #f3bb03;
+    box-shadow:0 0 3px #f3bb03;
+    -moz-box-shadow:0 0 3px #f3bb03;
+    -webkit-box-shadow:0 0 3px #f3bb03;
 }
-.fa {
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 50%;
-    width: 40px;
+.side_viewF{
+    background:white;
+    outline:3px solid #f3bb03;
+    box-shadow:0 0 3px #f3bb03;
+    -moz-box-shadow:0 0 3px #f3bb03;
+    -webkit-box-shadow:0 0 3px #f3bb03;
 }
-  
-.fa:hover {
-      opacity: 0.7;
+.sub{
+    color: #111010;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-  
-.fa-facebook {
-    background: #3B5998;
-    color: white;
-    
-}
-  
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
-}
-.fa-pinterest {
-    background: #cb2027;
-    color: white;
-}
-.loginbutton{
-    height: 40px;
-    width: 380px ;
-    background-color: blue;
-    text-align: center ;
-    color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 2px solid blue ;
-    box-shadow: 2px 2px 2px 2px  #b6b6b6;
-}
-.loginbutton:hover{
-    color: blue;  
-    background-color:white ;
-}
-.lbutton{
-    height: 40px;
-    width: 380px ;
-    background-color: white;
-    text-align: center ;
-    color: blue;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 2px solid blue ;
-    box-shadow: 2px 2px 2px 2px  #b6b6b6;
-}
-.lbutton:hover{
-    color:white;  
-    background-color:blue ;
-}
-.sizebutton{
-    box-shadow: 2px 2px 2px 2px  #b6b6b6;
-    
-    height: 40px;
-    width: 380px ;
-    color:rgb(250, 244, 244);
-}
-.sizebutton:hover{
-    color:indigo;  
-    
-}
+

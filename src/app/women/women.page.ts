@@ -10,36 +10,24 @@ import { UserService } from '../user.service';
 })
 export class WomenPage implements OnInit {
   wValue: string;
-  products = [1,2,3,4,5,6,7,8]
+  products = [1, 2, 3, 4, 5, 6, 7, 8];
 
   constructor(
     private service: UserService,
     private ActiveRoute: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    console.log('hello');
+  }
 
   ngOnInit() {
     this.ActiveRoute.queryParams.subscribe((params) => {
       this.wValue = params['category'];
-      this.service.getdata2().subscribe((data) => {
-        this.products = data['data'][0][this.wValue];
+      this.service.getdata2(this.wValue).subscribe((data) => {
+        this.products = data['data']
       });
     });
-    console.log("helloTata")
-  }
 
-  navigator(cat: string) {
-    this.router.navigate(['.'], {
-      relativeTo: this.ActiveRoute,
-      queryParams: { 'category': cat },
-    });
+    console.log('helloTata');
   }
-
-  navigator2(name:string, id:any){
-    this.router.navigate(['product'] , {
-      relativeTo : this.ActiveRoute,
-      queryParams : {'category' : this.wValue,'name' : name , 'id' : id}
-    })
-  }
-
 }
