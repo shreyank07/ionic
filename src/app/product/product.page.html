@@ -1,8 +1,8 @@
 <ion-header>
-    <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 </ion-header>
 
-<ion-content>
+<!-- <ion-content>
     <div class="container-fluid ">
         <div class="row m-5">
             <div class="col-md-1 p-1">
@@ -122,128 +122,179 @@
                 
             </div>
         </div>
+    </div> -->
+<ion-content class="container-fluid">
+  <div class="row p-4">
+    <div class="col-md">
+      <p style="color: #ababab">
+        Home > Women > {{category}} > <strong>{{subname}}</strong>
+      </p>
     </div>
-  <!-- <div class="container-fluid">
-    <div class="row p-4">
-        <p style="color:#ababab;">Home > Men > Tshirts > Blue-Neck Tshirt</p>
-    </div>
-    <div class="row">
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+      <div class="row ml-4 mt-1" *ngFor="let img of side_img ; let i = index">
         <div class="col-md">
-
-            <div class="side_view">
-                <a><img src="http://127.0.0.1:8000/static/subproduct1.jpg"
-                    (click)="change(0)" class="productImage"></a>
-                <a><img src="http://127.0.0.1:8000/static/subproduct2.jpg"
-                    (click)="change(1)" class="productImage"></a>
-                <a><img src="http://127.0.0.1:8000/static/subproduct3.jpg"
-                    (click)="change(2)" class="productImage"></a>
-                <a><img src="http://127.0.0.1:8000/static/subproduct4.jpg"
-                    (click)="change(3)" class="productImage"></a>
-            </div>
-
-            <div class="main_view">
-                <img src={{main_img}} style="padding: 100px;padding-top: 0%;" id="main" alt="IMAGE">
-            </div>
-
-
+          <img
+            class="border border-dark side_view"
+            id="{{i}}"
+            src="{{img}}"
+            alt="Image {{i}}"
+            (mouseover)="change(i)"
+            (click)="change(i)"
+            tabindex="0"
+            style="cursor: pointer; max-width: 50px"
+          />
         </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col">
+          <div class="main_view">
+            <img
+              src="{{main_img}}"
+              style="padding: 100px; padding-top: 0%; min-width: 70px"
+              id="main"
+              alt="IMAGE"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="row">
         <div class="col-md">
-            <div class="row">
-                <h3 style="font-weight : 600;">PRODUCT NAME GOES HERE</h3>
-            </div>
-            <div class="row">
-                <span class="mt-2" style="font-size: larger; font-weight: bolder;">$0.00</span>
-            </div>
-            <div class="row lightPara">
-                <p>Size</p>
-            </div>
-            <div class="SMLbuttons row ">
-                <button class="px-3 py-2 font-stretch">SMALL</button>
-                <button class="px-3 py-2 font-stretch">MEDIUM</button>
-                <button class="px-3 py-2 font-stretch">LARGE</button>
-            </div>
-            <div class="row lightPara">
-                <span class=lightPara-second;>Low Stock : <span class="redLine">Only 5 Left!</span> </span>
-            </div>
-            <div class="row addToCart mt-4 py-2 font-stretch">
-                <button>ADD TO CART</button>
-            </div>
-            <div class="row pt-4" style="margin-left: -19px;">
-                <div class="col-3">
-                    <div class="row">
-                        <img class="icon" src="../../assets/images/ordership.png" alt="plane">
-                        <div class="col iconLine">
-                            <p style="font-weight: 700 ; font-size:15px;">ORDERS SHIP</p>
-                            <p class="iconLineSmall">In 5 Business Days</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3" style="margin-left: 8px;">
-                    <div class="row">
-                        <img class="icon" src=".../../assets/images/free.png" alt="shipping">
-                        <div class="col iconLine">
-                            <p style="font-weight: 700 ; font-size:15px;">FREE</p>
-                            <p class="iconLineSmall">Shipping</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3" style="margin-left: -50px;">
-                    <div class="row">
-                        <img class="icon" src="../../assets/images/thumps.png" alt="return">
-                        <div class="col iconLine">
-                            <p style="font-weight: 700 ; font-size:15px;">30 DAY</p>
-                            <p class="iconLineSmall">Return and Refund</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="row">
-                        <img class="icon" src="../../assets/images/secure.png" alt="secure">
-                        <div class="col iconLine">
-                            <p style="font-weight: 700 ; font-size:15px;">SECURE</p>
-                            <p class="iconLineSmall">Payments</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md productDetails">
-                    <h5 class="pt-4">PRODUCT DETAILS</h5>
-                    <hr>
-                    <div class="details">
-                        <p><span>Color</span><span class = "detailsText" *ngFor='let p of users'>{{p.color}} </span></p>
-                        <p><span>Weight</span><span class = "detailsText"> - Text goes here</span></p>
-                        <p><span>Material</span><span class="detailsText"> - Text goes here</span></p>
-                        <p><span>Dimensions</span><span class="detailsText"> - Text goes here</span></p>
-                        <p><span>Warranty</span><span class="detailsText"> - Text goes here</span></p>
-                    </div>
-                </div>
-            </div>
+          <h3 style="font-weight: 600">PRODUCT NAME GOES HERE</h3>
         </div>
-    </div>
-    <div class="row pt-0">
-        <div class="col-md-6">
-            <div class="row justify-content-center pt-4">
-                <a href="#">
-                    <div class=" fa fa-facebook-f socialIcon" ></div>
-                </a>
-                <a href="#">
-                    <div class=" fa fa-twitter socialIcon"></div>
-                </a>
-                <a href="#">
-                    <div class="fa fa-pinterest socialIcon" ></div>
-                </a>
-                
-            </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <span class="mt-2" style="font-size: larger; font-weight: bolder"
+            >Rs. 0.00</span
+          >
         </div>
+      </div>
+      <div class="row lightPara">
+        <div class="col-md">
+          <p>Size</p>
+        </div>
+      </div>
+      <div class="row pb-3">
+        <div class="col-md-2" *ngFor="let Bitem of buttonArray">
+          <button class="sizebutton mr-2" style="width: 100px; color: black">
+            {{Bitem}}
+          </button>
+        </div>
+      </div>
+      <div class="row lightPara">
+        <div class="col-md">
+          <span class="lightPara-second;"
+            >Low Stock : <span class="redLine">Only 5 Left!</span>
+          </span>
+        </div>
+      </div>
+      <div class="row mt-4 py-2 font-stretch">
+        <div class="col-md-5">
+          <button class="btn">ADD TO CART</button>
+        </div>
+        <div class="col-md-5">
+          <button class="btn">BUY NOW</button>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col-3">
+          <div class="row">
+            <img
+              class="icon"
+              src="../../assets/images/ordership.png"
+              alt="plane"
+            />
+            <div class="col">
+              <p style="font-weight: 700; font-size: 15px">
+                ORDERS SHIP<span class ="sub">In 5 Business days</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3" style="margin-left: 8px">
+          <div class="row">
+            <img
+              class="icon"
+              src=".../../assets/images/free.png"
+              alt="shipping"
+            />
+            <div class="col ">
+              <p style="font-weight: 700; font-size: 15px">FREE <span class="sub">Shipping</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <img
+              class="icon"
+              src="../../assets/images/thumps.png"
+              alt="return"
+            />
+            <div class="col">
+              <p style="font-weight: 700; font-size: 15px">30 DAY <span class="sub">Return and Refund</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <img
+              class="icon"
+              src="../../assets/images/secure.png"
+              alt="secure"
+            />
+            <div class="col iconLine">
+              <p style="font-weight: 700; font-size: 15px">SECURE <span class="sub">Payments</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md productDetails">
+          <h5 class="pt-4">PRODUCT DETAILS</h5>
+          <hr />
+          <div class="details">
+            <p><span>Color</span><span class="detailsText"> - </span></p>
+            <p>
+              <span>Weight</span
+              ><span class="detailsText"> - Text goes here</span>
+            </p>
+            <p>
+              <span>Material</span
+              ><span class="detailsText"> - Text goes here</span>
+            </p>
+            <p>
+              <span>Dimensions</span
+              ><span class="detailsText"> - Text goes here</span>
+            </p>
+            <p>
+              <span>Warranty</span
+              ><span class="detailsText"> - Text goes here</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-</div> -->
-
-<script>
-    
-
-</script>
-<app-footer></app-footer>
-
+  </div>
+  <div class="row pt-0">
+    <div class="col-md-6">
+      <div class="row justify-content-center pt-4">
+        <a href="#">
+          <div class="fa fa-facebook-f socialIcon"></div>
+        </a>
+        <a href="#">
+          <div class="fa fa-twitter socialIcon"></div>
+        </a>
+        <a href="#">
+          <div class="fa fa-pinterest socialIcon"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </ion-content>
