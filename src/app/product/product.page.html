@@ -165,14 +165,7 @@
     <div class="col-md">
       <div class="row">
         <div class="col-md">
-          <h3 style="font-weight: 600">PRODUCT NAME GOES HERE</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md">
-          <span class="mt-2" style="font-size: larger; font-weight: bolder"
-            >Rs. 0.00</span
-          >
+          <h1 style="font-weight: 600">{{name}}</h1>
         </div>
       </div>
       <div class="row lightPara">
@@ -202,81 +195,97 @@
           <button class="btn">BUY NOW</button>
         </div>
       </div>
+
       <div class="row pt-4">
         <div class="col-3">
           <div class="row">
-            <img
-              class="icon"
-              src="../../assets/images/ordership.png"
-              alt="plane"
-            />
-            <div class="col">
+            <div class="col-5">
+              <img
+                class="icon"
+                src="../../assets/images/ordership.png"
+                alt="plane"
+              />
+            </div>
+            <div class="col iconLine">
               <p style="font-weight: 700; font-size: 15px">
-                ORDERS SHIP<span class ="sub">In 5 Business days</span>
+                ORDERS SHIP<span class="sub">In 5 Business days</span>
               </p>
             </div>
           </div>
         </div>
-        <div class="col-3" style="margin-left: 8px">
-          <div class="row">
-            <img
-              class="icon"
-              src=".../../assets/images/free.png"
-              alt="shipping"
-            />
-            <div class="col ">
-              <p style="font-weight: 700; font-size: 15px">FREE <span class="sub">Shipping</span></p>
-            </div>
-          </div>
-        </div>
         <div class="col-3">
           <div class="row">
-            <img
-              class="icon"
-              src="../../assets/images/thumps.png"
-              alt="return"
-            />
-            <div class="col">
-              <p style="font-weight: 700; font-size: 15px">30 DAY <span class="sub">Return and Refund</span></p>
+            <div class="col-5">
+              <img
+                class="icon"
+                src=".../../assets/images/free.png"
+                alt="shipping"
+              />
             </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="row">
-            <img
-              class="icon"
-              src="../../assets/images/secure.png"
-              alt="secure"
-            />
+
             <div class="col iconLine">
-              <p style="font-weight: 700; font-size: 15px">SECURE <span class="sub">Payments</span></p>
+              <p style="font-weight: 700; font-size: 15px">
+                FREE <span class="sub">Shipping</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <div class="col-5">
+              <img
+                class="icon"
+                src="../../assets/images/thumps.png"
+                alt="return"
+              />
+            </div>
+
+            <div class="col iconLine">
+              <p style="font-weight: 700; font-size: 15px">
+                30 DAY <span class="sub">Return and Refund</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <div class="col-5">
+              <img
+                class="icon"
+                src="../../assets/images/secure.png"
+                alt="secure"
+              />
+            </div>
+
+            <div class="col iconLine">
+              <p style="font-weight: 700; font-size: 15px">
+                SECURE <span class="sub">Payments</span>
+              </p>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md productDetails">
-          <h5 class="pt-4">PRODUCT DETAILS</h5>
-          <hr />
-          <div class="details">
-            <p><span>Color</span><span class="detailsText"> - </span></p>
-            <p>
-              <span>Weight</span
-              ><span class="detailsText"> - Text goes here</span>
-            </p>
-            <p>
-              <span>Material</span
-              ><span class="detailsText"> - Text goes here</span>
-            </p>
-            <p>
-              <span>Dimensions</span
-              ><span class="detailsText"> - Text goes here</span>
-            </p>
-            <p>
-              <span>Warranty</span
-              ><span class="detailsText"> - Text goes here</span>
-            </p>
-          </div>
+          <h3 class="pt-4" style="font-weight: bolder">PRODUCT DETAILS</h3>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 details" style="font-weight: bold;
+        font-size: 15px;">
+          <p>Price</p>
+          <p>Color</p>
+          <p>Material</p>
+          <p>Weight</p>
+          <p>Manufacturer</p>
+        </div>
+        <div class="col details">
+          <p> Rs. {{price}}</p>
+            <p>{{color}}</p>
+            <p>{{material}}</p>
+            <p>{{weight}}</p>
+            <p>{{manufac}}</p>
         </div>
       </div>
     </div>

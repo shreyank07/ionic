@@ -397,7 +397,7 @@ p {
 /* Product information goes here */
 .lightPara{
     color: #ababab;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .lightPara .lightPara-second{
     margin-bottom: 20px;
@@ -462,28 +462,15 @@ p {
 }
 
 .icon{
-    width:50px;
-    height: 45px;
+    width : 100%
 }
 
-
-.productDetails{
-    margin-left: -16px;
-    margin-top: 15px;
+.iconLine{
+    margin-left: -20px;
 }
 
-.productDetails h5{
-    font-weight: bolder;
-}
-.productDetails hr{
-    margin-bottom: 1px;
-    margin-top: 1px;
-    border: 1px solid #ababab;
-    margin-left: 1px;
-}
 .details{
     margin-top: 1px;
-    margin-left: -2px;
 }
 
 .details p{
@@ -560,4 +547,9 @@ p {
   text-align: left;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+.productDetaiils > hr{
+    &:before,
+    &:after {
+      box-shadow: 0 0.5px 0 black;
+}
+}

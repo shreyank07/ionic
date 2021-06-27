@@ -18,7 +18,13 @@ export class ProductPage implements OnInit {
   category:any;
   side_img = [];
   main_img : string;
+  name : string;
   subname : string;
+  color : string;
+  manufac : string;
+  material : string;
+  weight : string;
+  price : string;
   constructor(
     private http: HttpClient,
     private activatedroute: ActivatedRoute,
@@ -33,8 +39,16 @@ export class ProductPage implements OnInit {
     this.service.getdata2(this.category).subscribe(data=>{
       this.data = data['data'][this.id]
       this.subname = this.data["subname"]
+      this.name = this.data["name"]
+      this.material = this.data["material"]
+      this.weight = this.data["weight"]
+      this.manufac = this.data["manufacturer"]
+      this.price = this.data["price"]
+      this.color = this.data["color"]
       this.side_img = this.data["img"]
+      if (this.side_img!= undefined){
       this.main_img = this.side_img[0]
+      }
       console.log(this.data)
     })
 
