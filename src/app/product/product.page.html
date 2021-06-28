@@ -266,27 +266,31 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md productDetails">
-          <h3 class="pt-4" style="font-weight: bolder">PRODUCT DETAILS</h3>
-          <hr>
+        <div class="col-md">
+          <h3 class="divider line razor text-monospace" style="font-weight: bold;" contenteditable>PRODUCT DETAILS</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-2 details" style="font-weight: bold;
-        font-size: 15px;">
-          <p>Price</p>
-          <p>Color</p>
-          <p>Material</p>
-          <p>Weight</p>
-          <p>Manufacturer</p>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-7 details" style="font-weight: bold;
+            font-size: 15px;">
+              <p>Price</p>
+              <p>Color</p>
+              <p>Material</p>
+              <p>Weight</p>
+              <p>Manufacturer</p>
+            </div>
+            <div class="col details">
+              <p> Rs. {{price}}</p>
+                <p>{{color}}</p>
+                <p>{{material}}</p>
+                <p>{{weight}}g</p>
+                <p>{{manufac}}</p>
+            </div>
+          </div>
         </div>
-        <div class="col details">
-          <p> Rs. {{price}}</p>
-            <p>{{color}}</p>
-            <p>{{material}}</p>
-            <p>{{weight}}</p>
-            <p>{{manufac}}</p>
-        </div>
+
       </div>
     </div>
   </div>

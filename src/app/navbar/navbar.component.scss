@@ -1,25 +1,36 @@
 a:link {
-    text-decoration: none;
-  }
-  
-  a:visited {
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  a:active {
-    text-decoration: underline;
-  }
-  .lastChild{
-    right: 0px;
-    left: auto;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+.lastChild {
+  right: 0px;
+  left: auto;
 }
 .dropdown-menu-center {
   left: 50% !important;
   right: auto !important;
-  
+
   transform: translate(-50%, 0) !important;
+}
+.navbar-brand > h3 {
+  color: #0855fa;
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 3px;
+  cursor: pointer;
 }
