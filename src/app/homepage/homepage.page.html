@@ -4,16 +4,16 @@
 <ion-content>
     
   <div class="container-fluid">
-    <div class="row px-5 " style="padding: 40px; ">
-        <div class="col-md-12 px-5" style="background-color: rgb(208, 230, 236); height: 400px;  "></div>
+    <div class="row px-5 " style="padding: 40px;background-color: rgb(253, 249, 242); ">
+        <div class="col-md-12 px-5 " style=" height: 400px; "><img src="http://127.0.0.1:8000/static/bigsale.jpg"  style=" height: 400px; "></div>
     </div>
-    <div class="row text-center">
+    <div class="row text-center pt-3">
         <div class="col-md-3"></div>
         <div class="col-md-6 " ><strong style="font-size: 25px;">BEST SELLER OF THE SEASON</strong><br style="font-size: 10px;">Loerum ipsum sentence ipsum sentence<br>ipsum sentence loerum sentence </div>
         <div class="col-md-3"></div>
     </div>
     <div class="row   ml-0 py-0 px-5 pt-5"  >
-    <div class="col-md-3 mb-5 " style="text-align: center;" *ngFor='let prod of popularswear' routerLink="/product" [queryParams]="{_id: prod._id }">
+    <div class="col-md-3 mb-5 " style="text-align: center;" *ngFor='let prod of womenswear' routerLink="/product" [queryParams]="{_id: prod._id }">
           
         <div class="col-md-12 card ">
           <div class="row " style="height: 270px; text-align: center;">
@@ -21,7 +21,7 @@
           </div>
           <div style="padding-top:28px ;">{{prod.productname}}</div>
           <div class="price" style="padding-bottom: 10px;"><s>{{prod.oldprice}}</s><b>  {{prod.price}}</b></div>
-          <p><button>Add to Cart</button></p>
+          <!-- <p><button>Add to Cart</button></p> -->
         </div>
       </div>
     </div>
@@ -54,13 +54,13 @@
         <div class="col-md-5"><button class="button btn-primary"><strong>VIEW ALL</strong></button></div>
         <div class="col-md-5"></div>
     </div>
-    <div class="row px-5 mt-2 text-center" style="padding: 50px;margin: 80px; ">
-        <div class="col-md-12 px-5" style="background-color: rgb(208, 230, 236); height: 400px;  "><p style="padding-top: 150px; font-size: 25px;"><strong> Loreum ipsum Loreum ipsum<br>dorem issac</strong></p></div>
+    <div class="row px-5 mt-2 text-center" style="padding: 20px;margin: 40px; ">
+        <div class="col-md-12 px-5 link " style=" height: 400px; "><img src="http://127.0.0.1:8000/static/multiple1.jpg"  style=" height: 420px; width: 100%;"></div>
     </div>
     <div class="row text-center mt-0 ml-5 py-0 pt-0 text-center"style="padding-left: 260px;  " >
-        <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/jackets.jpg"class="image-hover-highlight" style=" height: 250px; "><p style="font-size: 23px; "><strong>Jackets</strong></p></div>
-        <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/dresses.jpg"class="image-hover-highlight" style=" height: 250px; "><p style="font-size: 23px; "><strong>Dressses</strong></p></div>
-        <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/watches.jpg"class="image-hover-highlight" style=" height: 250px; "><p style="font-size: 23px; "><strong>Watches</strong></p></div>
+        <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/jackets.jpg"class="card" style=" height: 250px; "><p style="font-size: 23px; margin-top: 10%"><strong>Jackets</strong></p></div>
+        <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/dresses.jpg"class="card" style=" height: 250px; "><p style="font-size: 23px;  margin-top: 10%"><strong>Dressses</strong></p></div>
+        <div class="col-md-2 mx-5 " style=" height: 250px; "><img src="http://127.0.0.1:8000/static/watches.jpg"class="card" style=" height: 250px; "><p style="font-size: 23px; margin-top: 10% "><strong>Watches</strong></p></div>
         <div class="col-md-2 mx-5"  ></div>
     </div>
     

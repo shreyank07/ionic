@@ -47,6 +47,12 @@ export class ProductPage implements OnInit {
     })
     
       }
+      addcart(){
+        this.http.post('http://127.0.0.1:8000/ecomapp/insertitem',{picture:this.picture,product:this.product,price:this.price,color:this.color}).subscribe((res:any)=>{
+          alert(res.message);
+        })
+      }
+    
       
 
 }

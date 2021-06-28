@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page1',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class Page1Page implements OnInit {
   users=[];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private router:Router) {
   //    this.http.get('https://www.autonise.com/api/course/catalog/').subscribe((result:any) =>{
   //   console.log(result);
   //  })
@@ -17,7 +18,7 @@ export class Page1Page implements OnInit {
 
   ngOnInit() {
   }
-  name:any;
+  email:any;
   
   password:any;
 
@@ -26,15 +27,20 @@ export class Page1Page implements OnInit {
     
     
 
-   this.http.post('http://127.0.0.1:8000/ecomapp/login',{email:this.name,password:this.password}).subscribe((res:any)=>{
+   this.http.post('http://127.0.0.1:8000/ecomapp/login',{email:this.email,password:this.password}).subscribe((res:any)=>{
+    console.log(res);
+    localStorage.setItem('token',res.token);
+    localStorage.setItem('myvar','abc');
+    localStorage.setItem('loginstatus',res.status);
+    this.router.navigate(['/homepage']); 
+    alert('Login Successfull');
      
-     alert(res.message);
-     
-   }
+   },(error:any)=>{
+     alert('Error occured!');
+     console.error(error);
+   });
    
-   )
-   
-   if (this.name==null ||this.password==null)
+   if (this.email==null ||this.password==null)
      {
        alert("fill in required fields");
      

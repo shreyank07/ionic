@@ -25,7 +25,7 @@ export class SignupPage implements OnInit {
 
   loginMe(){
     // console.log(this.firstname,this.email);
-    this.http.post('http://127.0.0.1:8000/ecomapp/register',{name:this.firstname,email:this.email,password:this.password}).subscribe((res:any)=>{
+    this.http.post('http://127.0.0.1:8000/ecomapp/insertusers',{name:this.firstname,email:this.email,password:this.password,number:this.number}).subscribe((res:any)=>{
       this.users=res.users;
       console.log(this.users,res.message);
       alert(res.message);
