@@ -19,5 +19,7 @@ from . import views
 
 urlpatterns = [
     path('data',views.data,name = "Data"),
-    path('product',views.product,name = "Data")
+    path('data2',views.data2,name = "Data2"),
+    path('product',views.product,name = "Data"),
+    path('cart',views.cart, name = "User")
 ]
