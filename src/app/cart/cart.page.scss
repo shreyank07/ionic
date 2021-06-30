@@ -20,9 +20,6 @@
     cursor: pointer;
 }
 
-.body{
-    background-color:blue;
-}
 .subname{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: medium;
@@ -38,9 +35,7 @@
     text-shadow: 0 0 1.5px #32e81c;
     font-size: 16px;
 }
-.quantity{
 
-}
 .box:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    
@@ -50,3 +45,11 @@
     width: 40px;
     text-align: end;
 }
+
+.okButton{
+    box-shadow: rgba(27, 233, 27, 0.16) 0px 1px 4px, rgb(4, 114, 14) 0px 0px 0px 3px;
+    font-weight: bolder;
+    padding: 0px;
+    width: 22px;
+}
+

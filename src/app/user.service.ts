@@ -32,5 +32,18 @@ export class UserService {
       params: { name: name },
     });
   }
+
+  getDetailedCart(name){
+    return this.http.get('http://127.0.0.1:8000/cartDetails' , {params : {"name" : name}})
+  }
+  updateQty(name,index,qty){
+    return this.http.post('http://127.0.0.1:8000/updateQty',{"quantity" : qty},{params : {"name" : name, "index" : index}})
+  }
+
+  removeCart(name,index){
+    return this.http.get('http://127.0.0.1:8000/removeItem',{
+      params : {"name" : name, "index" : index}
+    })
+  }
   
 }
