@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+
+.head{
+    position: sticky;
+    top: 0%;
+    background-color: white;
+    z-index: 999;
+}
+.name{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 7px;
+    font-weight: 600;
+    margin-top: 9px;
+    line-height: 14px;
+}
+.name > .heading:hover{
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.body{
+    background-color:blue;
+}
+.subname{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}
+.soldBy{
+    font-family: emoji;
+    color: grey;
+    font-size: 14px;
+    margin-top: 2px;
+}
+.off{
+    text-shadow: 0 0 1.5px #32e81c;
+    font-size: 16px;
+}
+.quantity{
+
+}
+.box:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   
+}
+
+#quantity{
+    width: 40px;
+    text-align: end;
+}

@@ -12,6 +12,7 @@ import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils
 })
 export class ProductPage implements OnInit {
 
+  personName = "Vanshil"
   buttonArray = ['SMALL','MEDIUM','LARGE']
   id: any;
   data:any;
@@ -68,5 +69,14 @@ export class ProductPage implements OnInit {
   
     img.className += "side_viewF"
 
+  }
+  addToCart(){
+    
+    console.log("hello")
+    this.service.postCart(this.personName,this.category,parseInt(this.id)).subscribe(data => {
+      alert("Added")
+    },error=>{
+      alert(error["error"])
+    })
   }
 }

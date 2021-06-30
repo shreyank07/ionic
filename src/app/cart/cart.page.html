@@ -1,0 +1,57 @@
+<ion-header>
+  <app-navbar></app-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="row head">
+      <div class="col mt-3 text-uppercase">
+        <h2 #hello>{{name}}'s Cart</h2>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-8">
+        <div
+          class="border border-1 mt-3 rounded-lg p-2 bg-light box"
+          *ngFor="let item of userCart ; let i= index"
+        >
+          <div class="row">
+            <div class="col-3 p-3">
+              <img
+                class="w-75 pl-2 imgs"
+                src="{{item.src}}"
+                alt="ITEM"
+                (click)="navigate(i,item.name)"
+                style="cursor: pointer"
+              />
+            </div>
+            <div class="col">
+              <p
+                class="name text-info pt-2"
+                
+              ><span class="heading" (click)="navigate(i,item.name)">{{item.name}}</span>
+                
+                <span class="float-right pr-3 text-danger price"
+                >&#8377;{{item.price}}</span
+              >
+              </p>
+              <p class="subname mt-1 d-inline">{{item.subname}}</p>
+              <span class="float-right pr-3">
+                <del class="pr-2 text-secondary"
+                  >&#8377;{{((100/(100-item.offer))*item.price) | number :
+                  '1.0-0'}}</del
+                >
+                <span class="text-success off"> {{item.offer}}% OFF </span>
+              </span>
+              <p class="soldBy">Sold by : {{item.manufacturer}}</p>
+              <span class="quantity font-weight-bold mr-2">Qty</span>
+              <input (click) = "test(i,qty[i])" type="number" name="num" id="quantity" min = "1" [(ngModel)] = "qty[i]">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</ion-content>
