@@ -61,3 +61,29 @@ def cartCheck(data,name):
             return False
     return True
 
+@csrf_exempt
+def detailedCart(request):
+    name = request.GET.get("name")
+    catAindex = collection2.find_one({'name' : name})["cart"]
+    data = []
+    for item in catAindex:
+        col = collection.find_one({"category" : item["category"]})["entries"][item["id"]]
+        data.append(col)
+    return JsonResponse({"status" : True , 'data' : data})
+
+
+@csrf_exempt
+def updateQty(request):
+    name = request.GET.get("name")
+    index = request.GET.get("index")
+    quantity = json.loads(request.body)["quantity"]
+    data = collection2.update_one({"name" : name},{"$set" : {f"cart.{str(index)}.qty" : quantity }})
+    return JsonResponse({"status" : True})
+
+@csrf_exempt
+def removeItem(request):
+    name = request.GET.get("name")
+    index = request.GET.get("index")
+    data = collection2.update_one({"name" : name},{"$unset" : {f"cart.{str(index)}" : 1}})
+    data = collection2.update_one({"name" : name},{"$pull" : {"cart" : None}})
+    return JsonResponse({"status" : True})
