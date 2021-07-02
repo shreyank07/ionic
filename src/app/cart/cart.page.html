@@ -31,7 +31,7 @@
                   >{{item.name}}</span
                 >
 
-                <span class="float-right pr-3 text-secondary price"
+                <span class="float-right pr-3 text-dark price"
                   >&#8377;{{item.price}}</span
                 >
               </p>
@@ -74,7 +74,7 @@
                   mr-2
                   btn btn-outline-secondary
                 "
-                (click) = "remove(i)"
+                (click)="remove(i)"
               >
                 REMOVE
               </button>
@@ -82,7 +82,57 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4"></div>
+
+      <div class="col-md-4">
+        <div class="mt-3 col border border-1 pl-2 pt-1 MyCart" id="cartD">
+          <div class="my-2">
+            <span class="pl-2 cartDetailsHeading"
+              >CART DETAILS &#40;{{NumberItems}} Items&#41;
+            </span>
+          </div>
+          <hr class="mt-2" />
+
+          <div class="mt-3 cartDetails">
+            <div class="my-2">
+              <span class="pl-2 totalMRP">Total MRP</span
+              ><span class="float-right mr-2"
+                >&#8377;{{TotalMRP | number : '1.0-0'}}</span
+              >
+            </div>
+            <div class="mt-2">
+              <span class="pl-2 discount">Discount</span
+              ><span class="float-right mr-2 text-success"
+                >&#8722;&#8377;{{TotalMRP - totalPrice | number :
+                '1.0-0'}}</span
+              >
+            </div>
+            <div class="mt-2">
+              <span class="pl-2 discount">Delievery Charges </span>
+              <span style="vertical-align: middle" id="info" class="text-secondary"
+                ><i class="fa fa-info-circle" aria-hidden="true"
+                matTooltip = "{{tooltipStatement}}"
+                matTooltipClass="tooltip-info"
+                matTooltipPosition = "below"
+                [matTooltipHideDelay]="250"
+                ></i></span
+              ><span
+                class="float-right mr-2 text-success"
+                id="dfee"
+                [ngClass]="class1"
+                >45</span
+              >
+            </div>
+          </div>
+          <hr />
+          <div class="my-2 TotalAmount">
+            <span class="pl-2">Total Amount</span
+            ><span class="float-right mr-2">&#8377;{{totalPrice + DFee}}</span>
+          </div>
+          <div class="p-2">
+            <button class="btn btn-warning w-100">PROCEED TO BUY</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <app-footer></app-footer>

@@ -47,10 +47,7 @@ export class ProductPage implements OnInit {
       this.price = this.data["price"]
       this.color = this.data["color"]
       this.side_img = this.data["img"]
-      if (this.side_img!= undefined){
-      this.main_img = this.side_img[0]
-      }
-      console.log(this.data)
+      this.main_img = this.data["src"]
     })
 
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
@@ -6,29 +6,49 @@ import { UserService } from '../user.service';
   selector: 'app-cart',
   templateUrl: './cart.page.html',
   styleUrls: ['./cart.page.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CartPage implements OnInit {
+
+  class1 = {
+    "text-danger" : false
+  }
+  tooltipStatement : string = "hello"
+  infoText: string
+  DFee = 49
+  x = 0;
+  TotalMRP:number
   totalPrice: number = 0;
   qty = [];
   name = 'Vanshil';
   userCart = [];
   catAindex: any;
+  NumberItems : number
+
   constructor(private service: UserService, private route: Router) {}
   ngOnInit() {
     this.service.getUserCart(this.name).subscribe((data) => {
       this.catAindex = data['data'];
+      this.NumberItems = this.catAindex.length
       console.log(this.catAindex);
-
+      if(this.x==0){
       this.catAindex.forEach((element) => {
         this.qty.push(element['qty']);
       });
+    }
+    this.x = 1
       
       this.service.getDetailedCart(this.name).subscribe((data) => {
         this.userCart = data['data'];
         this.updatePrice();
+        this.updateMRP()
+        this.updateDfee()
+        this.updateTooltip()
+        if(this.userCart.length==0){
+          document.getElementById("cartD").style.display = "none"
+        }
       });
-
-      console.log(this.qty);
+      console.log("Quantity os " ,this.qty);
     });
 
     // this.catAindex.forEach((element) => {
@@ -71,11 +91,36 @@ export class CartPage implements OnInit {
       },
     });
   }
+
+  updateTooltip(){
+    this.tooltipStatement = "Add products worth " + '\u20B9' + (1000-this.totalPrice).toString() + " more for free delivery"
+  }
+
+  updateDfee(){
+
+    if(this.userCart.length == 0){
+      this.DFee = 0
+    }
+
+    if (this.totalPrice<1000){
+      this.class1["text-danger"] = true
+      document.getElementById("dfee").innerHTML = '&#8377;' + this.DFee
+      document.getElementById("info").style.display = "inline"
+     
+    }
+    else{
+      document.getElementById("dfee").innerText = "FREE";
+      document.getElementById("info").style.display = "none"
+      this.class1["text-danger"] = false
+    }
+  }
+
   updatePrice() {
-    for (let i = 0; i < this.qty.length; i++) {
+    this.totalPrice = 0
+    for (let i = 0; i < this.catAindex.length; i++) {
       this.totalPrice += this.qty[i] * this.userCart[i]['price'];
     }
-    console.log(this.totalPrice);
+    console.log( " The price is " ,this.totalPrice);
   }
   // test(index, value) {
   //   console.log(value);
@@ -87,9 +132,20 @@ export class CartPage implements OnInit {
   //   this.totalPrice += (value - this.qty[i]) * this.userCart[index]['price'];
   //   console.log(this.totalPrice);
   // }
+
+  updateMRP(){
+    this.TotalMRP = 0
+    for (let i = 0; i < this.catAindex.length; i++) {
+      let item = this.userCart[i]
+      this.TotalMRP += (100/(100-item["offer"]))*item["price"]*this.qty[i]
+    }
+  }
+
   updateQty(index){
-    let i = parseInt(index)
-    this.totalPrice += this.userCart[index]['price'];
+    this.updatePrice()
+    this.updateMRP()
+    this.updateDfee()
+    this.updateTooltip()
     console.log(this.totalPrice);
     let but = document.getElementById("ok" + index.toString())
     but.style.display = "inline";
@@ -107,6 +163,7 @@ export class CartPage implements OnInit {
     let i = parseInt(index)
     this.service.removeCart(this.name,i).subscribe(data=>{
       console.log(data)
+      this.qty.splice(index,1)
       this.ngOnInit()
     })
   }
