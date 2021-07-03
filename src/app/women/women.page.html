@@ -53,7 +53,7 @@
       <div class="col-lg-3">
         <mat-form-field appearance="fill">
           <mat-label>Color</mat-label>
-          <mat-select [(value)]="yoo">
+          <mat-select [(value)]="yoo" (selectionChange) = "change()">
             <mat-option value="Red" class="bg-danger text-white"
               >Red</mat-option
             >

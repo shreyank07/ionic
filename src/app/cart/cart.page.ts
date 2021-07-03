@@ -109,6 +109,7 @@ export class CartPage implements OnInit {
      
     }
     else{
+      this.DFee = 0
       document.getElementById("dfee").innerText = "FREE";
       document.getElementById("info").style.display = "none"
       this.class1["text-danger"] = false
@@ -163,9 +164,19 @@ export class CartPage implements OnInit {
     let i = parseInt(index)
     this.service.removeCart(this.name,i).subscribe(data=>{
       console.log(data)
-      this.qty.splice(index,1)
-      this.ngOnInit()
+      this.updateOnRemove(i)
     })
+  }
+  updateOnRemove(index){
+    this.qty.splice(index,1)
+    this.userCart.splice(index,1)
+    this.catAindex.splice(index,1)
+    this.NumberItems -= 1
+    this.updatePrice();
+    this.updateMRP();
+    this.updateDfee();
+    this.updateTooltip();
+
   }
 }
 
