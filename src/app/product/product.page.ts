@@ -12,20 +12,12 @@ import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils
 })
 export class ProductPage implements OnInit {
 
+  imgPointer = 0
   personName = "Vanshil"
   buttonArray = ['SMALL','MEDIUM','LARGE']
   id: any;
-  data:any;
+  data = {}
   category:any;
-  side_img = [];
-  main_img : string;
-  name : string;
-  subname : string;
-  color : string;
-  manufac : string;
-  material : string;
-  weight : string;
-  price : string;
   constructor(
     private http: HttpClient,
     private activatedroute: ActivatedRoute,
@@ -39,34 +31,23 @@ export class ProductPage implements OnInit {
     });
     this.service.getdata2(this.category).subscribe(data=>{
       this.data = data['data'][this.id]
-      this.subname = this.data["subname"]
-      this.name = this.data["name"]
-      this.material = this.data["material"]
-      this.weight = this.data["weight"]
-      this.manufac = this.data["manufacturer"]
-      this.price = this.data["price"]
-      this.color = this.data["color"]
-      this.side_img = this.data["img"]
-      this.main_img = this.data["src"]
     })
 
   }
 
-  change(index){
-    for(let i = 0 ; i<4; i++){
-      document.getElementById(i.toString()).classList.remove("side_viewF")
-    }
-    console.log(index)
-    this.main_img = this.side_img[index]
+  change(index,src){
+    this.data["src"] = src
+    document.getElementById(this.imgPointer.toString()).classList.remove("side_viewF")
+    this.imgPointer = index
     document.getElementById(index).classList.add("side_viewF")
   }
-  border(){
-    let img = document.getElementById("view")
-    console.log(img)
+  // border(){
+  //   let img = document.getElementById("view")
+  //   console.log(img)
   
-    img.className += "side_viewF"
+  //   img.className += "side_viewF"
 
-  }
+  // }
   addToCart(){
     
     console.log("hello")

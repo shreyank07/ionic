@@ -22,38 +22,22 @@
       <div class="col-lg-3">
         <mat-form-field appearance="fill">
           <mat-label>Category</mat-label>
-          <mat-select #category [(value)]="wValue">
-            <mat-option
-              [routerLink]="['./']"
-              [queryParams]="{'category' : 'KURTAS'}"
-              value="KURTAS"
-              >Kurtas</mat-option
-            >
-            <mat-option
-              [routerLink]="['./']"
-              [queryParams]="{'category' : 'TOPS'}"
-              value="TOPS"
-              >Tops</mat-option
-            >
-            <mat-option
-              [routerLink]="['./']"
-              [queryParams]="{'category' : 'SAREES'}"
-              value="SAREES"
-              >Sarees</mat-option
-            >
-            <mat-option
-              [routerLink]="['./']"
-              [queryParams]="{'category' : 'JEANS'}"
-              value="JEANS"
-              >Jeans</mat-option
-            >
+          <mat-select
+            #category
+            [(value)]="wValue"
+            (selectionChange)="change($event)"
+          >
+            <mat-option value="KURTAS">Kurtas</mat-option>
+            <mat-option value="TOPS">Tops</mat-option>
+            <mat-option value="SAREES">Sarees</mat-option>
+            <mat-option value="JEANS">Jeans</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div class="col-lg-3">
         <mat-form-field appearance="fill">
           <mat-label>Color</mat-label>
-          <mat-select [(value)]="yoo" (selectionChange) = "change()">
+          <mat-select [(value)]="yoo">
             <mat-option value="Red" class="bg-danger text-white"
               >Red</mat-option
             >
@@ -118,7 +102,7 @@
                 <span class="price">Rs. {{item.price}}</span>
               </h1>
             </div>
-            <a class="btn"  (click) = "addToCart(i)">add to cart</a>
+            <a class="btn" (click)="addToCart(i)">add to cart</a>
           </section>
         </div>
       </div>
@@ -165,7 +149,6 @@
 
   <app-footer></app-footer>
 </ion-content>
-
 
 <!-- Routing -->
 <!-- Acivated router mai hi dalna pada  -->

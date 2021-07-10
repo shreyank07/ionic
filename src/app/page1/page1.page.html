@@ -3,42 +3,101 @@
 </ion-header>
 
 <ion-content>
-    
-  <div class="container-fluid">
-    <div class="row text-center  " >
-        <div class="col-md-4"></div>
-        <div class="col-md-4  mt-5 logincard">
-            <div class="row" style="padding-left: 45px;">
-                <label ><strong style="font-size: 30px;">Login to shopper's stop</strong></label>
-            </div>
-            <!-- <div class="row pb-3">
-                <input [(ngmodel)]="username" type="email" id="email" name="email" Placeholder="Email ID" class="full-width " style="height: 40px;">
-            </div> -->
-            <ion-item no-lines>
-                <ion-input [(ngModel)]="name" placeholder=" Username or Email " class="full-width userpass " style="height: 40px; text-decoration: none;"></ion-input>
-            </ion-item>
+  <div class="container">
+    <div class="row text-center mt-5">
+      <div class="col">
+        <div class="d-inline-block login rounded-4">
+          <div>
+            <img
+              class="loginImg mt-3"
+              src="http://127.0.0.1:8000/static/assets/loginLogooo.jpg"
+              alt="Login"
+            />
+          </div>
+          <div class="mt-2 loginDetails p-4">
+            <p class="loginHeading py-4">LOGIN TO YOUR ACCOUNT</p>
+            <!-- <form (ngSubmit)="logForm()" [ngModelOptions]="{standalone: true}"> -->
+            <!-- <ion-item>
+                <ion-input
+                  type="email"
+                  [(ngModel)]="todo.email"
+                  placeholder="Email"
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input
+                  type="password"
+                  [(ngModel)]="todo.pass"
+                  placeholder="Password"
+                ></ion-input>
+              </ion-item>
+              <ion-button type="submit" block="true" clear = "True">LOGIN</ion-button> -->
+
+            <form #form="ngForm" (keydown)="login(form,$event)" class="mt-3">
+
+              <ion-item><ion-input
+                name="email"
+                type="email"
+                placeholder="Your@email.com"
+                [(ngModel)] = "todo.email"
+                required
+              ></ion-input></ion-item>
+                
+              
+                <ion-item style = "position: relative;"><ion-input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  [(ngModel)] = "todo.pass"
+                  required = "true"
+                ></ion-input>
+                <a href="">
+                  <span class="float-right fpass"> Forgot Password?</span>
+                </a>
+           
+                </ion-item>
+               
+
+              <!-- <ion-item>
+                <ion-input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  ngModel
+                  required
+                ></ion-input>
+              </ion-item> -->
+              <!-- <ion-item>
+                <ion-input
+                  name="number"
+                  type="number"
+                  placeholder="Phone Number"
+                  ngModel
+                  required
+                ></ion-input>
+              </ion-item>
+             --> 
+              <ion-button 
+                [disabled]="form.invalid"
+                size="medium"
+                type="submit"
+                expand="block"
+                class="w-100 login-button my-3 mt-2"
+                fill = "outline"
+                ><ion-icon name="log-in" class="pr-1"></ion-icon>
+                Login</ion-button
+              >
+            </form>
+
+            <hr style=" border :2px solid" class="mt-2">
             
-            <!-- <div class="row pb-3">
-                <input [(ngmodel)]="password" type="password" id="password" name="password" Placeholder="Password" class="full-width " style="height: 40px;">
-                <i class="far fa-eye pt-2" id="togglePassword" style="font-size: 20px; margin-left: -40px;" ></i>
-            </div> -->
-            <ion-item>
-                <ion-input  type="password" [(ngModel)]="password" placeholder="password " class="full-width userpass " style="height: 40px;"></ion-input>
-                <i class="far fa-eye pt-2" id="togglePassword" style="font-size: 20px; margin-left: -100px" ></i>
-            </ion-item>
-            <!-- <div class="row ">
-                <button (click)="loginMe()" type="button" class="button btn-primary full-width " style="height: 45px; box-shadow: 2px 2px 2px 2px  #b6b6b6" >     Login    </button>
-            </div> -->
-            <ion-item>
-                <ion-button  (click)="loginMe()"  class="full-width " style="height: 40px;">Login</ion-button>
-            </ion-item>
-            <div class="row px-5 pt-2 mt-2" style="text-align: center; cursor: inherit;margin-left: 21px;">
-                New to Shopper's Stop? <nav><a routerLink="/signup" routerLinlActive="active">Create Account</a></nav>
-            </div> 
+              <a routerLink = "/signup" class="text-secondary font-weight-bold createAccount">
+                NEW HERE? CREATE AN ACCOUNT
+              </a>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<app-footer></app-footer>
-
-
+  </div>
+  <app-footer></app-footer>
 </ion-content>

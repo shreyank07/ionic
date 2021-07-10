@@ -1,4 +1,5 @@
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
+import { Conditional } from '@angular/compiler';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
@@ -6,49 +7,46 @@ import { UserService } from '../user.service';
   selector: 'app-cart',
   templateUrl: './cart.page.html',
   styleUrls: ['./cart.page.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class CartPage implements OnInit {
-
   class1 = {
-    "text-danger" : false
-  }
-  tooltipStatement : string = "hello"
-  infoText: string
-  DFee = 49
+    'text-danger': false,
+  };
+  tooltipStatement: string;
+  infoText: string;
+  DFee: number;
+  DFeeStatement: string;
   x = 0;
-  TotalMRP:number
+  TotalMRP: number = 0;
   totalPrice: number = 0;
   qty = [];
   name = 'Vanshil';
   userCart = [];
   catAindex: any;
-  NumberItems : number
+  NumberItems: number;
 
   constructor(private service: UserService, private route: Router) {}
   ngOnInit() {
     this.service.getUserCart(this.name).subscribe((data) => {
       this.catAindex = data['data'];
-      this.NumberItems = this.catAindex.length
+      this.NumberItems = this.catAindex.length;
       console.log(this.catAindex);
-      if(this.x==0){
-      this.catAindex.forEach((element) => {
-        this.qty.push(element['qty']);
-      });
-    }
-    this.x = 1
-      
+      if (this.x == 0) {
+        this.catAindex.forEach((element) => {
+          this.qty.push(element['qty']);
+        });
+      }
+      this.x = 1;
+
       this.service.getDetailedCart(this.name).subscribe((data) => {
         this.userCart = data['data'];
-        this.updatePrice();
-        this.updateMRP()
-        this.updateDfee()
-        this.updateTooltip()
-        if(this.userCart.length==0){
-          document.getElementById("cartD").style.display = "none"
+        this.updateAll();
+        if (this.userCart.length == 0) {
+          document.getElementById('cartD').style.display = 'none';
         }
       });
-      console.log("Quantity os " ,this.qty);
+      console.log('Quantity os ', this.qty);
     });
 
     // this.catAindex.forEach((element) => {
@@ -80,6 +78,14 @@ export class CartPage implements OnInit {
     // }
   }
 
+  updateAll() {
+    console.log('Hello all');
+    this.updateTotalItems();
+    this.updatePrice();
+    this.updateMRP();
+    this.updateTooltip();
+    this.updateDfee();
+  }
 
   navigate(index, name) {
     console.log(index, name);
@@ -92,36 +98,39 @@ export class CartPage implements OnInit {
     });
   }
 
-  updateTooltip(){
-    this.tooltipStatement = "Add products worth " + '\u20B9' + (1000-this.totalPrice).toString() + " more for free delivery"
+  updateTotalItems() {
+    console.log('hey number items');
+    this.NumberItems = this.qty.reduce((a, b) => a + b, 0);
   }
 
-  updateDfee(){
+  updateTooltip() {
+    console.log('heu tooltip');
+    this.tooltipStatement =
+      'Add products worth ' +
+      '\u20B9' +
+      (1000 - this.totalPrice).toString() +
+      ' more for free delivery';
+  }
 
-    if(this.userCart.length == 0){
-      this.DFee = 0
-    }
-
-    if (this.totalPrice<1000){
-      this.class1["text-danger"] = true
-      document.getElementById("dfee").innerHTML = '&#8377;' + this.DFee
-      document.getElementById("info").style.display = "inline"
-     
-    }
-    else{
-      this.DFee = 0
-      document.getElementById("dfee").innerText = "FREE";
-      document.getElementById("info").style.display = "none"
-      this.class1["text-danger"] = false
+  updateDfee() {
+    console.log('hey discount');
+    if (this.totalPrice < 1000) {
+      this.class1['text-danger'] = true;
+      this.DFee = 49;
+      this.DFeeStatement = '\u20B9' + this.DFee.toString();
+    } else {
+      this.DFee = 0;
+      this.DFeeStatement = 'FREE';
+      this.class1['text-danger'] = false;
     }
   }
 
   updatePrice() {
-    this.totalPrice = 0
+    console.log('PRice updatedd!!');
+    this.totalPrice = 0;
     for (let i = 0; i < this.catAindex.length; i++) {
       this.totalPrice += this.qty[i] * this.userCart[i]['price'];
     }
-    console.log( " The price is " ,this.totalPrice);
   }
   // test(index, value) {
   //   console.log(value);
@@ -134,50 +143,42 @@ export class CartPage implements OnInit {
   //   console.log(this.totalPrice);
   // }
 
-  updateMRP(){
-    this.TotalMRP = 0
+  updateMRP() {
+    console.log('MRP updated');
+    this.TotalMRP = 0;
     for (let i = 0; i < this.catAindex.length; i++) {
-      let item = this.userCart[i]
-      this.TotalMRP += (100/(100-item["offer"]))*item["price"]*this.qty[i]
+      let item = this.userCart[i];
+      this.TotalMRP +=
+        (100 / (100 - item['offer'])) * item['price'] * this.qty[i];
     }
   }
 
-  updateQty(index){
-    this.updatePrice()
-    this.updateMRP()
-    this.updateDfee()
-    this.updateTooltip()
+  updateQty(index) {
     console.log(this.totalPrice);
-    let but = document.getElementById("ok" + index.toString())
-    but.style.display = "inline";
+    let but = document.getElementById('ok' + index.toString());
+    but.style.display = 'inline';
+    this.updateAll();
   }
-  
-  dissapear(index){
+
+  dissapear(index) {
     let i = parseInt(index);
-    this.service.updateQty(this.name , i , this.qty[index]).subscribe(data=>{
-      console.log(data)
-    })
-    document.getElementById("ok" + index.toString()).style.display = "none";
+    this.service.updateQty(this.name, i, this.qty[index]).subscribe((data) => {
+      console.log(data);
+    });
+    document.getElementById('ok' + index.toString()).style.display = 'none';
   }
 
-  remove(index){
-    let i = parseInt(index)
-    this.service.removeCart(this.name,i).subscribe(data=>{
-      console.log(data)
-      this.updateOnRemove(i)
-    })
+  remove(index) {
+    let i = parseInt(index);
+    this.service.removeCart(this.name, i).subscribe((data) => {
+      console.log(data);
+      this.updateOnRemove(i);
+    });
   }
-  updateOnRemove(index){
-    this.qty.splice(index,1)
-    this.userCart.splice(index,1)
-    this.catAindex.splice(index,1)
-    this.NumberItems -= 1
-    this.updatePrice();
-    this.updateMRP();
-    this.updateDfee();
-    this.updateTooltip();
-
+  updateOnRemove(index) {
+    this.qty.splice(index, 1);
+    this.userCart.splice(index, 1);
+    this.catAindex.splice(index, 1);
+    this.updateAll();
   }
 }
-
-

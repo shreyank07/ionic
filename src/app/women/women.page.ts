@@ -17,8 +17,7 @@ export class WomenPage implements OnInit {
     private service: UserService,
     private ActiveRoute: ActivatedRoute,
     private router: Router
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.ActiveRoute.queryParams.subscribe((params) => {
@@ -27,8 +26,6 @@ export class WomenPage implements OnInit {
         this.products = data['data'];
       });
     });
-
-    console.log('helloTata');
   }
 
   addToCart(id) {
@@ -44,7 +41,9 @@ export class WomenPage implements OnInit {
       }
     );
   }
-  change() {
-    console.log('cahanged');
+  change(v) {
+    this.service.getdata2(v.value).subscribe((data) => {
+      this.products = data['data'];
+    });
   }
 }

@@ -127,22 +127,21 @@
   <div class="row p-4">
     <div class="col-md">
       <p style="color: #ababab">
-        Home > Women > {{category}} > <strong>{{subname}}</strong>
+        Home > Women > {{category}} > <strong>{{data.subname}}</strong>
       </p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-1">
-      <div class="row ml-4 mt-1" *ngFor="let img of side_img ; let i = index">
+      <div class="row ml-4 mt-1" *ngFor="let img of data.img; let i = index">
         <div class="col-md">
           <img
             class="border border-dark side_view"
             id="{{i}}"
             src="{{img}}"
             alt="Image {{i}}"
-            (mouseover)="change(i)"
+            (mouseover)="change(i,$event.target.src)"
             (click)="change(i)"
-            tabindex="0"
             style="cursor: pointer; max-width: 50px"
           />
         </div>
@@ -153,7 +152,7 @@
         <div class="col">
           <div class="main_view">
             <img
-              src="{{main_img}}"
+              [src]="data.src"
               style="padding: 100px; padding-top: 0%; min-width: 70px"
               id="main"
               alt="IMAGE"
@@ -165,7 +164,7 @@
     <div class="col-md">
       <div class="row">
         <div class="col-md">
-          <h1 style="font-weight: 600">{{name}}</h1>
+          <h1 style="font-weight: 600">{{data.name}}</h1>
         </div>
       </div>
       <div class="row lightPara">
@@ -282,11 +281,11 @@
               <p>Manufacturer</p>
             </div>
             <div class="col details">
-              <p> Rs. {{price}}</p>
-                <p>{{color}}</p>
-                <p>{{material}}</p>
-                <p>{{weight}}g</p>
-                <p>{{manufac}}</p>
+              <p> Rs. {{data.price}}</p>
+                <p>{{data.color}}</p>
+                <p>{{data.material}}</p>
+                <p>{{data.weight}}g</p>
+                <p>{{data.manufacturer}}</p>
             </div>
           </div>
         </div>
