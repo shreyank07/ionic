@@ -9,43 +9,42 @@ import { UserService } from '../user.service';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
- 
+  
+  
+  passwordBool = false;
   users=[];
+  todo = {}
   constructor(private http: HttpClient) { }
 
   ngOnInit():void{
     // this.user=this.userinfo.getdata()
     
   }
-  
-  firstname:any;
-  email:any;
-  password:any;
-  number:any;
 
-  loginMe(){
-    // console.log(this.firstname,this.email);
-    this.http.post('http://127.0.0.1:8000/ecomapp/register',{name:this.firstname,email:this.email,password:this.password}).subscribe((res:any)=>{
-      this.users=res.users;
-      console.log(this.users,res.message);
-      alert(res.message);
-      
+  login(form,e){
+    if(e.keyCode == 13){
+      if(!form.invalid){
+        console.log(this.todo)  
     }
-    
-    )
-    
-    if (this.firstname==null || this.email==null||this.password==null)
-      {
-        alert("fill in required fields");
-      
-      }
-   
-      return true;
   }
+}
+  focused(){
+    console.log("hello")
   }
   
+  change(){
+    if (this.passwordBool){
+      this.passwordBool = false
+    }
+    else{
+      this.passwordBool = true
+    }
+  }
   
 
- 
+
+
+}
+
 
 
