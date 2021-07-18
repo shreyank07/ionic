@@ -46,25 +46,40 @@
               action="http://127.0.0.1:8000/register"
             >
               <ion-item>
-                <ion-label position="stacked"> Name </ion-label
+                <ion-label position="floating" class="text-secondary">
+                  Name </ion-label
                 ><ion-input
+                  #myName
                   name="name"
                   type="text"
                   [(ngModel)]="todo.name"
                   required
                 ></ion-input
               ></ion-item>
+              <div class="text-left ml-1 my-1"></div>
 
               <ion-item>
-                <ion-label position="stacked"> Email </ion-label>
+                <ion-label position="floating" class="text-secondary">
+                  Email
+                </ion-label>
                 <ion-input
-                  (change)="focused()"
+                  (ionBlur)="change3($event)"
+                  #myEmail
+                  [(ngModel)]="todo.email"
+                  (ionChange)="check3($event)"
                   name="email"
                   type="email"
-                  [(ngModel)]="todo.email"
+                  pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                  autofocus
                   required
                 ></ion-input
               ></ion-item>
+              <div class="text-danger text-left ml-1 my-1">
+                <span id="EmailValidation" class="d-none"
+                  ><ion-icon name="caret-forward-outline"></ion-icon>Must be a
+                  valid email
+                </span>
+              </div>
 
               <!-- <ion-item>
                   <ion-input
@@ -76,8 +91,14 @@
                   ></ion-input>
                 </ion-item> -->
               <ion-item>
-                <ion-label position="stacked"> Number </ion-label>
+                <ion-label position="floating" class="text-secondary">
+                  Number
+                </ion-label>
                 <ion-input
+                  #myNumber
+                  (ionFocus)="change2($event)"
+                  (ionBlur)="change2($event)"
+                  (ionChange)="check2($event)"
                   name="number"
                   type="number"
                   pattern="[0-9]{10}"
@@ -85,27 +106,37 @@
                   required
                 ></ion-input>
               </ion-item>
+              <div id="10D" class="text-left ml-1 my-1">
+                <span class="d-block" *ngIf="numberBool"
+                  ><ion-icon name="caret-forward-outline"></ion-icon>Must be 10
+                  digits
+                </span>
+              </div>
 
               <ion-item>
-                <ion-label position="stacked"> Password </ion-label>
+                <ion-label position="floating" class="text-secondary">
+                  Password
+                </ion-label>
                 <ion-input
-                  (ionFocus)="change()"
-                  (ionBlur)="change()"
+                  #myPassword
+                  (ionFocus)="change1($event)"
+                  (ionBlur)="change1($event)"
+                  (ionChange)="check($event)"
                   name="password"
                   type="password"
+                  pattern="(?=.*\d)(?=.*[!@#]).{6,}"
                   [(ngModel)]="todo.pass"
                   required="true"
                 ></ion-input>
               </ion-item>
-              <div
-                class="text-secondary text-left ml-1 mt-1"
-                *ngIf="passwordBool"
-              >
-                <span class="d-block"
+              <div id="a6char" class="text-left ml-1 mt-1">
+                <span class="d-block" *ngIf="passwordBool"
                   ><ion-icon name="caret-forward-outline"></ion-icon>Atleast 6
                   characters
                 </span>
-                <span class="d-block"
+              </div>
+              <div id="NandSC" class="text-left ml-1 mt-1">
+                <span class="d-block" *ngIf="passwordBool"
                   ><ion-icon name="caret-forward-outline"></ion-icon>Should
                   contain a number and a special character !@#</span
                 >

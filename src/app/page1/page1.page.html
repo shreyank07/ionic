@@ -34,29 +34,32 @@
               <ion-button type="submit" block="true" clear = "True">LOGIN</ion-button> -->
 
             <form #form="ngForm" (keydown)="login(form,$event)" class="mt-3">
+              <ion-item>
+                <ion-label position="floating" class="text-secondary"
+                  >Email</ion-label
+                >
+                <ion-input
+                  name="email"
+                  type="email"
+                  [(ngModel)]="todo.email"
+                  required
+                ></ion-input
+              ></ion-item>
 
-              <ion-item><ion-input
-                name="email"
-                type="email"
-                placeholder="Your@email.com"
-                [(ngModel)] = "todo.email"
-                required
-              ></ion-input></ion-item>
-                
-              
-                <ion-item style = "position: relative;"><ion-input
+              <ion-item style="position: relative">
+                <ion-label position="floating" class="text-secondary"
+                  >Password</ion-label
+                >
+                <ion-input
                   name="password"
                   type="password"
-                  placeholder="Password"
-                  [(ngModel)] = "todo.pass"
-                  required = "true"
+                  [(ngModel)]="todo.pass"
+                  required="true"
                 ></ion-input>
                 <a href="">
-                  <span class="float-right fpass"> Forgot Password?</span>
+                  <span class="float-right fpass my-1"> Forgot Password?</span>
                 </a>
-           
-                </ion-item>
-               
+              </ion-item>
 
               <!-- <ion-item>
                 <ion-input
@@ -76,24 +79,27 @@
                   required
                 ></ion-input>
               </ion-item>
-             --> 
-              <ion-button 
+             -->
+              <ion-button
                 [disabled]="form.invalid"
                 size="medium"
                 type="submit"
                 expand="block"
                 class="w-100 login-button my-3 mt-2"
-                fill = "outline"
+                fill="outline"
                 ><ion-icon name="log-in" class="pr-1"></ion-icon>
                 Login</ion-button
               >
             </form>
 
-            <hr style=" border :2px solid" class="mt-2">
-            
-              <a routerLink = "/signup" class="text-secondary font-weight-bold createAccount">
-                NEW HERE? CREATE AN ACCOUNT
-              </a>
+            <hr style="border: 2px solid" class="mt-2" />
+
+            <a
+              routerLink="/signup"
+              class="text-secondary font-weight-bold createAccount"
+            >
+              NEW HERE? CREATE AN ACCOUNT
+            </a>
           </div>
         </div>
       </div>
