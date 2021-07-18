@@ -84,7 +84,7 @@
         <div class="card">
           <div
             [routerLink]="['/women/product']"
-            [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
+            [queryParams]="{'group' : 'women', 'category' : category.value , 'name' :  item.name , 'id' : i}"
             style="cursor: pointer"
           >
             <img src="{{item.src}}" alt="{{wValue}}" />
@@ -93,7 +93,7 @@
             <div
               class="min-details"
               [routerLink]="['/women/product']"
-              [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
+              [queryParams]="{'group' : 'women', 'category' : category.value , 'name' :  item.name , 'id' : i}"
               style="cursor: pointer"
             >
               <h1>

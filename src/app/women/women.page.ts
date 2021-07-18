@@ -12,6 +12,7 @@ export class WomenPage implements OnInit {
   personName = 'Vanshil';
   wValue: string;
   products = [1, 2, 3, 4, 5, 6, 7, 8];
+  group  = 'women';
 
   constructor(
     private service: UserService,
@@ -31,7 +32,7 @@ export class WomenPage implements OnInit {
   addToCart(id) {
     console.log('generated if', id);
     id = parseInt(id);
-    this.service.postCart(this.personName, this.wValue, id).subscribe(
+    this.service.postCart(this.personName, this.wValue, id,this.group).subscribe(
       (data) => {
         console.log(data);
         alert('Added');

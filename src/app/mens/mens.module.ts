@@ -10,13 +10,19 @@ import {FooterComponent} from '../footer/footer.component';
 
 import { MensPage } from './mens.page';
 
+import { DropdownComponent } from '../dropdown/dropdown.component';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MensPageRoutingModule
+    MensPageRoutingModule,
+    MatSelectModule,
+   
   ],
-  declarations: [MensPage,NavbarComponent,FooterComponent]
+  declarations: [MensPage, DropdownComponent, NavbarComponent, 
+    FooterComponent]
 })
 export class MensPageModule {}

@@ -12,6 +12,7 @@ import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils
 })
 export class ProductPage implements OnInit {
 
+  group : string;
   imgPointer = 0
   personName = "Vanshil"
   buttonArray = ['SMALL','MEDIUM','LARGE']
@@ -26,10 +27,11 @@ export class ProductPage implements OnInit {
 
   ngOnInit() {
     this.activatedroute.queryParams.subscribe((params) => {
+      this.group = params['group']
       this.id = params['id']
       this.category = params['category']
     });
-    this.service.getdata2(this.category).subscribe(data=>{
+    this.service.getdata2(this.category,this.group).subscribe(data=>{
       this.data = data['data'][this.id]
     })
 
@@ -51,7 +53,7 @@ export class ProductPage implements OnInit {
   addToCart(){
     
     console.log("hello")
-    this.service.postCart(this.personName,this.category,parseInt(this.id)).subscribe(data => {
+    this.service.postCart(this.personName,this.category,parseInt(this.id),this.group).subscribe(data => {
       alert("Added")
     },error=>{
       alert(error["error"])

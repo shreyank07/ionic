@@ -3,10 +3,8 @@
     class="navbar navbar-expand-lg navbar-light bg-light box-shadow"
     style="background-color: rgb(105, 163, 182)"
   >
-    <a style="text-decoration: none;"
-      class="navbar-brand"
-      
-      ><h3 routerLink = "/homepage">SHOPPER'S STOP</h3></a
+    <a style="text-decoration: none" class="navbar-brand"
+      ><h3 routerLink="/homepage">SHOPPER'S STOP</h3></a
     >
     <button
       class="navbar-toggler"
@@ -36,7 +34,8 @@
         <li class="nav-item">
           <nav>
             <a
-              routerLink="/mens"
+              [routerLink]="['/mens']"
+              [queryParams]="{ category: 'TSHIRTS' }"
               routerLinlActive="active"
               class="nav-link"
               style="color: black"
@@ -47,7 +46,7 @@
         <li class="nav-item">
           <a
             [routerLink]="['/women']"
-            [queryParams] = "{'category' : 'KURTAS'}"
+            [queryParams]="{ category: 'KURTAS' }"
             class="nav-link"
             style="color: black"
             href="#"
@@ -56,7 +55,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" style="color: black" href="#">WATCHES</a>
+          <a [routerLink] = "['/watches']" [queryParams] = "{category : 'SMART WATCHES'}" class="nav-link" style="color: black" href="#">WATCHES</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" style="color: black" href="#">OFFERS</a>

@@ -48,6 +48,10 @@ const routes: Routes = [
     loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   },
   {
+    path : 'mens/product',
+    loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
+  },
+  {
     path : 'product',
     loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   },
@@ -55,7 +59,11 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },  {
+    path: 'watches',
+    loadChildren: () => import('./watches/watches.module').then( m => m.WatchesPageModule)
   }
+
 
 
 ];

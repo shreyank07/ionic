@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md mt-4">
         <strong>
-          <h1>MEN {{wValue}}</h1>
+          <h1>MEN {{mValue}}</h1>
         </strong>
       </div>
     </div>
@@ -24,13 +24,13 @@
           <mat-label>Category</mat-label>
           <mat-select
             #category
-            [(value)]="wValue"
+            [(value)]="mValue"
             (selectionChange)="change($event)"
           >
-            <mat-option value="KURTAS">Kurtas</mat-option>
-            <mat-option value="TOPS">Tops</mat-option>
-            <mat-option value="SAREES">Sarees</mat-option>
-            <mat-option value="JEANS">Jeans</mat-option>
+            <mat-option value="TSHIRTS">TSHIRT</mat-option>
+            <mat-option value="JEANS">JEANS</mat-option>
+            <mat-option value="SHIRTS">SHIRTS</mat-option>
+            <mat-option value="TROUSERS">TROUSERS</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -83,17 +83,17 @@
       >
         <div class="card">
           <div
-            [routerLink]="['/women/product']"
-            [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
+            [routerLink]="['/mens/product']"
+            [queryParams]="{'group' : 'men','category' : category.value , 'name' :  item.name , 'id' : i}"
             style="cursor: pointer"
           >
-            <img src="{{item.src}}" alt="{{wValue}}" />
+            <img src="{{item.src}}" alt="{{mValue}}" />
           </div>
           <section class="details">
             <div
               class="min-details"
-              [routerLink]="['/women/product']"
-              [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
+              [routerLink]="['/mens/product']"
+              [queryParams]="{'group' : 'men','category' : category.value , 'name' :  item.name , 'id' : i}"
               style="cursor: pointer"
             >
               <h1>
@@ -491,7 +491,7 @@
          <div class="col-md-3 px-2 ">
              <div><strong>product name<br>$0.00</strong></div>
          </div> -->
-  </div>
+  <!-- </div> -->
   <!-- <div class="row   ml-0 py-0  px-5 pt-5"  >
          <div class="col-md-3 px-2 " >
             <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product5.jpg"class="image-hover-highlight zoom " style=" height: 350px; width: 85%;padding: 20px;"></div>

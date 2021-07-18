@@ -10,38 +10,38 @@ export class UserService {
   getdata() {
     return [{ name: 'ShreyankLadekar', email: 'Shreyank@autonise.com' }];
   }
-  getdata2(category) {
-    return this.http.get('http://127.0.0.1:8000/Women/data', {
+  getdata2(category,group = 'women') {
+    return this.http.get(`http://127.0.0.1:8000/${group}/data`, {
       params: { category: category },
     });
   }
 
-  getProductDetails(category) {
-    return this.http.get('http://127.0.0.1:8000/Women/product', {
+  getProductDetails(category,group = 'women') {
+    return this.http.get(`http://127.0.0.1:8000/${group}/product`, {
       params: { category: category },
     });
   }
 
-  getUserCart(name) {
-    return this.http.get('http://127.0.0.1:8000/Women/cart', {
+  getUserCart(name,group = 'women') {
+    return this.http.get(`http://127.0.0.1:8000/user/cart`, {
       params: { name: name },
     });
   }
-  postCart(name,category,id) {
-    return this.http.post('http://127.0.0.1:8000/Women/cart', {"category" : category , "id" : id, "qty" : 1}, {
+  postCart(name,category,id,group = 'women') {
+    return this.http.post(`http://127.0.0.1:8000/user/cart`, {"group" : group,"category" : category , "id" : id, "qty" : 1}, {
       params: { name: name },
     });
   }
 
-  getDetailedCart(name){
-    return this.http.get('http://127.0.0.1:8000/Women/cartDetails' , {params : {"name" : name}})
+  getDetailedCart(name,group = 'women'){
+    return this.http.get(`http://127.0.0.1:8000/user/cartDetails` , {params : {"group" : group , "name" : name}})
   }
-  updateQty(name,index,qty){
-    return this.http.post('http://127.0.0.1:8000/Women/updateQty',{"quantity" : qty},{params : {"name" : name, "index" : index}})
+  updateQty(name,index,qty,group = 'women'){
+    return this.http.post(`http://127.0.0.1:8000/user/updateQty`,{"quantity" : qty},{params : {"name" : name, "index" : index}})
   }
 
-  removeCart(name,index){
-    return this.http.get('http://127.0.0.1:8000/Women/removeItem',{
+  removeCart(name,index,group = 'women'){
+    return this.http.get(`http://127.0.0.1:8000/user/removeItem`,{
       params : {"name" : name, "index" : index}
     })
   }
