@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page1',
@@ -17,7 +18,7 @@ export class Page1Page implements OnInit {
 
   ngOnInit() {
   }
-  name:any;
+  email:any;
   
   password:any;
 

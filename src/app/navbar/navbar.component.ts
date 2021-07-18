@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 
@@ -10,11 +11,44 @@ import { UserService } from '../user.service';
 export class NavbarComponent implements OnInit {
 
   user:any=[]
-  constructor(private userinfo: UserService) { }
+  userstatus;
+  logged;
+
+  constructor(private userinfo: UserService,private router:Router) {
+    this.userstatus=localStorage.getItem('loginstatus');
+    if (this.userstatus=="true"){
+      this.logged="Logout";
+    }
+    else{
+      this.logged="Login";
+    }
+
+   }
 
   ngOnInit():void{
     this.user=this.userinfo.getdata()
     
+  }
+  history(){
+    this.userstatus=localStorage.getItem('loginstatus');
+    if (this.userstatus=="true"){
+      this.router.navigate(['/history']); 
+    }
+    else{
+      alert('Login Please');
+      this.router.navigate(['/page1']); 
+    }
+    
+  }
+  isloggedin(){
+    if (this.userstatus=='true'){
+
+      localStorage.removeItem('loginstatus');
+      this.logged="Login";
+    }
+    else{
+      this.router.navigate(['/page1']);
+    }
   }
   
   
