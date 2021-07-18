@@ -3,6 +3,175 @@
 </ion-header>
 
 <ion-content>
+  <div class="container-fluid px-5">
+    <div class="row">
+      <div class="col-md mt-4">
+        <strong>
+          <h1>MEN {{wValue}}</h1>
+        </strong>
+      </div>
+    </div>
+
+    <div class="row align-middle mt-3">
+      <div class="col-md-3 mt-2">
+        <kbd>FILTERS</kbd>
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Category</mat-label>
+          <mat-select
+            #category
+            [(value)]="wValue"
+            (selectionChange)="change($event)"
+          >
+            <mat-option value="KURTAS">Kurtas</mat-option>
+            <mat-option value="TOPS">Tops</mat-option>
+            <mat-option value="SAREES">Sarees</mat-option>
+            <mat-option value="JEANS">Jeans</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Color</mat-label>
+          <mat-select [(value)]="yoo">
+            <mat-option value="Red" class="bg-danger text-white"
+              >Red</mat-option
+            >
+            <mat-option value="Green" class="bg-success text-white"
+              >Green</mat-option
+            >
+            <mat-option value="Blue" class="bg-primary text-white"
+              >Blue</mat-option
+            >
+            <mat-option value="Yellow" class="bg-warning text-white"
+              >Yellow</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <mat-select>
+            <mat-option value="P1">500-1000</mat-option>
+            <mat-option value="P2">1000-2000</mat-option>
+            <mat-option value="P3">3000-4000</mat-option>
+            <mat-option value="P4">4000-5000</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Sort By</mat-label>
+          <mat-select>
+            <mat-option value="S1">Popularity</mat-option>
+            <mat-option value="S2">Discount</mat-option>
+            <mat-option value="S3">What's New?</mat-option>
+            <mat-option value="S4">Rating</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row text-center cardBody mx-5">
+      <div
+        class="col-lg-3 mt-5 my-3"
+        *ngFor="let item of products ; let i = index"
+      >
+        <div class="card">
+          <div
+            [routerLink]="['/women/product']"
+            [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
+            style="cursor: pointer"
+          >
+            <img src="{{item.src}}" alt="{{wValue}}" />
+          </div>
+          <section class="details">
+            <div
+              class="min-details"
+              [routerLink]="['/women/product']"
+              [queryParams]="{'category' : category.value , 'name' :  item.name , 'id' : i}"
+              style="cursor: pointer"
+            >
+              <h1>
+                {{item.name}}
+                <span class="sub">{{item.subname}}</span>
+                <span class="price">Rs. {{item.price}}</span>
+              </h1>
+            </div>
+            <a class="btn" (click)="addToCart(i)">add to cart</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ml-5 pt-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <button class="btn btn-primary">VIEW ALL PRODUCTS</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <div
+    class="row text-center mt-0 ml-5 py-0 pt-5 text-center"
+    style="padding-left: 250px"
+  >
+    <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+      <img
+        src="http://127.0.0.1:8000/static/jackets.jpg "
+        class="image-hover-highlight zoom"
+        style="height: 250px"
+      />
+      <p style="font-size: 23px"><strong>Jackets</strong></p>
+    </div>
+    <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+      <img
+        src="http://127.0.0.1:8000/static/dresses.jpg"
+        class="image-hover-highlight zoom"
+        style="height: 250px"
+      />
+      <p style="font-size: 23px"><strong>Dressses</strong></p>
+    </div>
+    <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+      <img
+        src="http://127.0.0.1:8000/static/watches.jpg"
+        class="image-hover-highlight zoom"
+        style="height: 250px"
+      />
+      <p style="font-size: 23px"><strong>Watches</strong></p>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</ion-content>
+
+<!-- Routing -->
+<!-- Acivated router mai hi dalna pada  -->
+<!-- margin left -20 kri uske vajh se reponsive nhi hori -->
+<!-- data.{attribute} krne par nhi hora -->
+<!-- execution mai gadbadi, images ulta pulta ho gya __ cart -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-header>
+  <app-navbar></app-navbar>
+</ion-header>
+
+<ion-content>
   <div class="container-fluid px-5" style="padding: 20px">
     <div class="row mt-4 px-4">
       <h2 style="font-style: oblique">Men Tshirts</h2>
@@ -382,5 +551,5 @@
          </div>
      </div> -->
 
-  <app-footer></app-footer>
-</ion-content>
+  <!-- <app-footer></app-footer>
+</ion-content> --> -->
