@@ -3,10 +3,12 @@ import json
 from django.http import HttpResponse , JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+import utils
+from rest_framework.decorators import api_view
 # Create your views here.
 
 db = settings.DB
-collection = settings.WOMEN_PRODUCTS
+collection = settings.WATCHES_PRODUCTS
 collection2 = settings.USER_DETAILS
 
 @csrf_exempt
@@ -19,12 +21,6 @@ def data(request):
         data = json.loads(request.body)
         collection.insert_one(data)
         return JsonResponse({"Status" : True})
-
-@csrf_exempt
-def product(request):
-    if request.method == 'GET':
-        cate = request.GET.get('category')
-        pass
 
 @csrf_exempt
 def data2(request):
@@ -49,15 +45,19 @@ def cart(request):
         data = json.loads(request.body)
         name = request.GET.get('name')
         print(data)
+        try:
+            print(collection2.find_one({'name' : name})["cart"])
+        except:
+            collection2.update_one({"name" : name} , {"$push" : {"cart" : []}})
         if cartCheck(data, name):
             data = collection2.update_one({'name' : name},{"$push" : {"cart" : data }})
             return JsonResponse({"status" : True})
         return HttpResponse("Already Exists" , status = 401)
+        
 
 def cartCheck(data,name):
     for item in collection2.find_one({'name' : name})["cart"]:
-        print(item)
-        if data == item:
+        if data['group'] == item['group'] and data['category'] == item['category'] and data['id'] == item['id']:
             return False
     return True
 
@@ -86,4 +86,34 @@ def removeItem(request):
     index = request.GET.get("index")
     data = collection2.update_one({"name" : name},{"$unset" : {f"cart.{str(index)}" : 1}})
     data = collection2.update_one({"name" : name},{"$pull" : {"cart" : None}})
+    return JsonResponse({"status" : True})
+
+@csrf_exempt
+@api_view(['POST'])
+def login(request):
+    req_user = json.loads(request.body)
+    userid = collection2.find_one({'email': req_user['email']})
+    if userid['password'] != req_user['password']:
+        return HttpResponse('Unauthorized', status=401)
+
+    token = jwt.encode(
+        {'email': req_user['email'],
+         'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=24 * 60 * 60)
+         },
+        settings.SECRET_KEY,
+        algorithm="HS256").decode('utf-8')
+
+    return JsonResponse({'status': True, 'token': token})
+
+@csrf_exempt
+@api_view(['POST'])
+def register(request):
+    data = json.loads(request.body)
+    if collection2.find_one({"email" : data["email"]}) or collection2.find_one({"number" : data["number"]}):
+        return HttpResponse("Email or number already exists",status = 401)
+    collection2.insert_one(data)
+    return HttpResponse("Signup Successful" , status = 200)
+
+@utils.requireLogin
+def verify(request):
     return JsonResponse({"status" : True})

@@ -1,0 +1,102 @@
+[
+        {
+            "name": "Anouk",
+            "subname": "Printed Straight Kurta",
+            "price": 676,
+            "color": "Blue",
+            "material": "Silk",
+            "weight": 540,
+            "manufacturer": "Limited",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411490-Vishudh-Women-Kurtas-9821504083411232-2.jpg",
+            "img": [
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411490-Vishudh-Women-Kurtas-9821504083411232-2.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411460-Vishudh-Women-Kurtas-9821504083411232-3.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411522-Vishudh-Women-Kurtas-9821504083411232-1.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411425-Vishudh-Women-Kurtas-9821504083411232-4.jpg"
+            ],
+            "offer": 23
+        },
+        {
+            "name": "Soch",
+            "subname": "Women Kurta",
+            "price": 998,
+            "color": "Blue",
+            "material": "cotton",
+            "weight": 550,
+            "manufacturer": "Looptoes",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11369460/2020/10/16/12cd2a09-b5b9-452f-909a-88335ccc93d21602848407974KurtasWWomenKurtasWWomenKurtasWWomen1.jpg",
+            "img": [
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411490-Vishudh-Women-Kurtas-9821504083411232-2.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411460-Vishudh-Women-Kurtas-9821504083411232-3.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411522-Vishudh-Women-Kurtas-9821504083411232-1.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2076229/2017/8/30/11504083411425-Vishudh-Women-Kurtas-9821504083411232-4.jpg"
+            ],
+            "offer": 26
+        },
+        {
+            "name": "Libas",
+            "subname": "Anarkali",
+            "price": 639,
+            "color": "Blue",
+            "material": "denim",
+            "weight": 450,
+            "manufacturer": "Shivalis",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/14080352/2021/6/16/2118ce1b-598a-4d93-ac7b-a550eddcd21c1623819833403-all-about-you-Women-Kurtas-2571623819832974-1.jpg",
+            "offer": 11
+        },
+        {
+            "name": "Taavi",
+            "subname": "Hand Print Kurta",
+            "price": 1169,
+            "color": "Blue",
+            "material": "cotton",
+            "weight": 920,
+            "manufacturer": "Prakash Ltd.",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10808392/2019/10/30/ace99bf5-e995-4f03-85a8-0d9602bda2c71572423096028-AHIKA-Women-Kurtas-6611572423093754-1.jpg",
+            "offer": 31
+        },
+        {
+            "name": "Ahika",
+            "subname": "Floral Kurta",
+            "price": 395,
+            "color": "Blue",
+            "material": "silk",
+            "weight": "650",
+            "manufacturer": "Triyas Ltd.",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12530312/2020/10/9/8cdcee27-1396-4572-8886-51797a12bd5d1602223585448-HERENOW-Women-Kurtas-2511602223583815-1.jpg",
+            "offer": 26
+        },
+        {
+            "name": "Moda Rapido",
+            "subname": "Printed Kurta",
+            "price": 669,
+            "color": "Blue",
+            "material": "cotton",
+            "weight": 920,
+            "manufacturer": "Sapphire Synthetics",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11369480/2020/1/31/b835a6da-f704-44bc-b85f-1a1049aa84bd1580451446557-W-Women-Blue--White-Printed-Straight-Kurta-821580451445628-1.jpg",
+            "offer": 38
+        },
+        {
+            "name": "Konaki",
+            "subname": "Round Print Kurta",
+            "price": 2136,
+            "color": "Blue",
+            "material": "silk",
+            "weight": 860,
+            "manufacturer": "Shreemaya Ethnics",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/8429331/2019/8/13/11121eb9-a8fc-4c98-bc09-b829def1b7fe1565693365854-W-Women-Blue-Solid-Straight-Kurta-3831565693364328-1.jpg",
+            "offer": 17
+        },
+        {
+            "name": "NainVish",
+            "subname": "Krepe Kurti",
+            "price": 499,
+            "color": "Blue",
+            "material": "cotton",
+            "weight": "345",
+            "manufacturer": "Athena Fashions",
+            "src": "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12218722/2020/9/4/7db683c0-dc92-4330-a694-33543c9baf4f1599218910818-AHIKA-Women-Blue--Green-Printed-Straight-Kurta-7781599218908-1.jpg",
+            "offer": 11
+        }
+    ]

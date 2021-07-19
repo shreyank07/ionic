@@ -153,3 +153,13 @@
   ]
 }
 
+{
+  "name": "Nagiri",
+      "subname": "Bandhani Saree",
+      "price": 1938,
+      "color": "Red",
+      "material": "Kalamkari",
+      "weight":  867,
+      "manufacturer": "Kashmiri Gondara Fashions",
+      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/5/25/39c845a8-bea5-4fa1-a1d9-96aba0d90a611621940411719-1.jpg"
+}
