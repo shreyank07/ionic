@@ -83,7 +83,7 @@
       >
         <div class="card">
           <div
-            [routerLink]="['/mens/product']"
+            [routerLink]="['/men/product']"
             [queryParams]="{'group' : 'men','category' : category.value , 'name' :  item.name , 'id' : i}"
             style="cursor: pointer"
           >
@@ -92,15 +92,19 @@
           <section class="details">
             <div
               class="min-details"
-              [routerLink]="['/mens/product']"
+              [routerLink]="['/men/product']"
               [queryParams]="{'group' : 'men','category' : category.value , 'name' :  item.name , 'id' : i}"
               style="cursor: pointer"
             >
               <h1>
                 {{item.name}}
-                <span class="sub">{{item.subname}}</span>
+              </h1>
+              <span class="sub d-block">{{item.subname}}</span>
+              <h1>
                 <span class="price">Rs. {{item.price}}</span>
               </h1>
+              
+              
             </div>
             <a class="btn" (click)="addToCart(i)">add to cart</a>
           </section>

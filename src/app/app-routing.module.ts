@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./page1/page1.module').then( m => m.Page1PageModule)
   },
   {
-    path: 'mens',
+    path: 'men',
     loadChildren: () => import('./mens/mens.module').then( m => m.MensPageModule)
   },
   {
@@ -48,7 +48,11 @@ const routes: Routes = [
     loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   },
   {
-    path : 'mens/product',
+    path : 'men/product',
+    loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
+  },
+  {
+    path : 'watches/product',
     loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   },
   {
@@ -59,7 +63,8 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
-  },  {
+  },
+  {
     path: 'watches',
     loadChildren: () => import('./watches/watches.module').then( m => m.WatchesPageModule)
   }

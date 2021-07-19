@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { MensPageRoutingModule } from './mens-routing.module';
+import { MensPage } from './mens.page';
 import {NavbarComponent} from '../navbar/navbar.component';
 import {FooterComponent} from '../footer/footer.component';
 
-import { MensPage } from './mens.page';
 
 import { DropdownComponent } from '../dropdown/dropdown.component';
 import {MatSelectModule} from '@angular/material/select';

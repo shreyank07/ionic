@@ -23,6 +23,7 @@ export class WomenPage implements OnInit {
   ngOnInit() {
     this.ActiveRoute.queryParams.subscribe((params) => {
       this.wValue = params['category'];
+      if(this.wValue == undefined) this.wValue = 'KURTAS'
       this.service.getdata2(this.wValue).subscribe((data) => {
         this.products = data['data'];
       });

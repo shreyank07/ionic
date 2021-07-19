@@ -22,6 +22,9 @@ export class MensPage implements OnInit {
   ngOnInit() {
     this.ActiveRoute.queryParams.subscribe((params) => {
       this.mValue = params['category'];
+      if(this.mValue == undefined){
+        this.mValue = 'TSHIRTS'
+      }
       this.service.getdata2(this.mValue,'men').subscribe((data) => {
         this.products = data['data'];
       });

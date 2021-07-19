@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 
-
-
 .cardBody {
   display: flex;
   min-height: 100vh;
@@ -31,57 +29,75 @@ h1 {
 }
 
 .details {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  position: absolute;
-  top: 75%;
-  width: 100%;
-  transition: box-shadow 0.3s ease-in-out, top 0.3s ease-in-out;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    transition: box-shadow 0.3s ease-in-out, top 0.3s ease-in-out;
+    height: 232px;
 }
+
 
 .card:hover .details {
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
-  top: 30%;
+  top: 24%;
 }
 
-.details > .min-details
-{
+.details > .min-details {
   margin-bottom: 20px;
 }
 
 .details > .min-details {
-  display: flex;
+  position: relative;
+  display: block;
   justify-content: space-between;
 }
 
-.details > .min-details > h1{
-    font-family: "Ubuntu", sans-serif; 
-    font-weight:600;
-    text-align: left;
-    font-size: medium;
+.details > .min-details > h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  text-align: left;
+  font-size: medium;
 }
 
-.details > .min-details > h1 > span.sub {
+.sub {
   color: #7b7b7b;
   display: block;
   font-size: 0.9rem;
   font-weight: 400;
-  margin-top: -10px;
   text-align: left;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.btn {
-  background-color: #192a56;
-  border-radius: 5px;
-  color: #fff;
-  display: block;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: capitalize;
-  width: 100%;
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+.btn{
+    background-color: #192a56;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: 90%;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.card .btn {
+    position: absolute;
+    bottom: 2%;
+    background-color: #192a56;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: 90%;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    bottom: 11px;
+    right: 10px;
 }
 
 .btn:hover {
@@ -89,11 +105,9 @@ h1 {
   transform: translateY(-2px);
 }
 
-.price{
-  color:rgb(243, 129, 129);
+.price {
+  color: rgb(243, 129, 129);
 }
-
-
 
 // .text-color{
 //     color: cadetblue;
@@ -158,12 +172,12 @@ h1 {
 //     text-align: center;
 //     font-family: arial;
 //   }
-  
+
 //   .price {
 //     color: grey;
 //     font-size: 22px;
 //   }
-  
+
 //   .card button {
 //     border: none;
 //     outline: 0;
@@ -175,11 +189,11 @@ h1 {
 //     width: 100%;
 //     font-size: 18px;
 //   }
-  
+
 //   .card:hover {
 //       -ms-transform: scale(1.1); /* IE 9 */
 //       -webkit-transform: scale(1.1); /* Safari 3-8 */
-//       transform: scale(1.1); 
+//       transform: scale(1.1);
 //     }
 // .zoom {
 //     padding: 50px;
@@ -189,11 +203,11 @@ h1 {
 //     height: 200px;
 //     margin: 0 auto;
 //   }
-  
+
 //   .zoom:hover {
 //     -ms-transform: scale(1.1); /* IE 9 */
 //     -webkit-transform: scale(1.1); /* Safari 3-8 */
-//     transform: scale(1.1); 
+//     transform: scale(1.1);
 //   }
 //   .productCards{
 //       padding-left: 10px;

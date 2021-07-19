@@ -8,13 +8,23 @@ import { WatchesPageRoutingModule } from './watches-routing.module';
 
 import { WatchesPage } from './watches.page';
 
+import {NavbarComponent} from '../navbar/navbar.component';
+import {FooterComponent} from '../footer/footer.component';
+
+
+import { DropdownComponent } from '../dropdown/dropdown.component';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WatchesPageRoutingModule
+    WatchesPageRoutingModule,
+    MatSelectModule,
+   
   ],
-  declarations: [WatchesPage]
+  declarations: [WatchesPage, DropdownComponent, NavbarComponent, 
+    FooterComponent]
 })
 export class WatchesPageModule {}

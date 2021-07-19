@@ -1,9 +1,545 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>watches</ion-title>
-  </ion-toolbar>
+  <app-navbar></app-navbar>
 </ion-header>
 
 <ion-content>
+  <div class="container-fluid px-5">
+    <div class="row">
+      <div class="col-md mt-4">
+        <strong>
+          <h1>{{mValue}} WATCHES</h1>
+        </strong>
+      </div>
+    </div>
 
+    <div class="row align-middle mt-3">
+      <div class="col-md-3 mt-2">
+        <kbd>FILTERS</kbd>
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Category</mat-label>
+          <mat-select
+            #category
+            [(value)]="mValue"
+            (selectionChange)="change($event)"
+          >
+            <mat-option value="ANALOUGE">ANALOUGE</mat-option>
+            <mat-option value="SMART">SMART</mat-option>
+            <mat-option value="LUXURY">LUXURY</mat-option>
+            <mat-option value="DIGITAL">DIGITAL</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Color</mat-label>
+          <mat-select [(value)]="yoo">
+            <mat-option value="Silver" class="bg-silver text-dark"
+              >Silver</mat-option
+            >
+            <mat-option value="Brown" class="bg-brown text-white"
+              >Brown</mat-option
+            >
+            <mat-option value="Golden" class="bg-golden text-dark"
+              >Golden</mat-option
+            >
+            <mat-option value="Black" class="bg-dark text-white"
+              >Black</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <mat-select>
+            <mat-option value="P1">500-1000</mat-option>
+            <mat-option value="P2">1000-2000</mat-option>
+            <mat-option value="P3">3000-4000</mat-option>
+            <mat-option value="P4">4000-5000</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Sort By</mat-label>
+          <mat-select>
+            <mat-option value="S1">Popularity</mat-option>
+            <mat-option value="S2">Discount</mat-option>
+            <mat-option value="S3">What's New?</mat-option>
+            <mat-option value="S4">Rating</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row text-center cardBody mx-5">
+      <div
+        class="col-lg-3 mt-5 my-3"
+        *ngFor="let item of products ; let i = index"
+      >
+        <div class="card">
+          <div
+            [routerLink]="['/watches/product']"
+            [queryParams]="{'group' : 'watches','category' : category.value , 'name' :  item.name , 'id' : i}"
+            style="cursor: pointer"
+          >
+            <img src="{{item.src}}" alt="{{mValue}}" />
+          </div>
+          <section class="details">
+            <div
+              class="min-details"
+              [routerLink]="['/watches/product']"
+              [queryParams]="{'group' : 'watches','category' : category.value , 'name' :  item.name , 'id' : i}"
+              style="cursor: pointer"
+            >
+              <h1>{{item.name}}</h1>
+              <span class="sub d-block">{{item.subname}}</span>
+              <h1>
+                <span class="price">Rs. {{item.price}}</span>
+              </h1>
+            </div>
+            <a class="btn" (click)="addToCart(i)">add to cart</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ml-5 pt-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <button class="btn btn-primary">VIEW ALL PRODUCTS</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <div
+    class="row text-center mt-0 ml-5 py-0 pt-5 text-center"
+    style="padding-left: 250px"
+  >
+    <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+      <img
+        src="http://127.0.0.1:8000/static/jackets.jpg "
+        class="image-hover-highlight zoom"
+        style="height: 250px"
+      />
+      <p style="font-size: 23px"><strong>Jackets</strong></p>
+    </div>
+    <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+      <img
+        src="http://127.0.0.1:8000/static/dresses.jpg"
+        class="image-hover-highlight zoom"
+        style="height: 250px"
+      />
+      <p style="font-size: 23px"><strong>Dressses</strong></p>
+    </div>
+    <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+      <img
+        src="http://127.0.0.1:8000/static/watches.jpg"
+        class="image-hover-highlight zoom"
+        style="height: 250px"
+      />
+      <p style="font-size: 23px"><strong>Watches</strong></p>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
 </ion-content>
+
+<!-- Routing -->
+<!-- Acivated router mai hi dalna pada  -->
+<!-- margin left -20 kri uske vajh se reponsive nhi hori -->
+<!-- data.{attribute} krne par nhi hora -->
+<!-- execution mai gadbadi, images ulta pulta ho gya __ cart -->
+
+<!-- <ion-header>
+  <app-navbar></app-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="container-fluid px-5" style="padding: 20px">
+    <div class="row mt-4 px-4">
+      <h2 style="font-style: oblique">Men Tshirts</h2>
+    </div>
+    <div class="row font-color" style="font-style: oblique">
+      <div class="col-md-2">Category</div>
+      <div class="col-md-2">Color</div>
+      <div class="col-md-2">Price</div>
+      <div class="col-md-2">Sort By</div>
+      <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 full-width">
+        <select
+          name="category"
+          id="category"
+          style="width: 200px; height: 40px"
+        >
+          <option value="Tshirts"><strong>Tshirts</strong></option>
+          <option value="Round neck"><strong>Round neck</strong></option>
+          <option value="Kurtas"><strong>Kurtas</strong></option>
+          <option value="Shirts"><strong>Shirts</strong></option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select name="color" id="color" style="width: 200px; height: 40px">
+          <option value="blue"><strong>blue</strong></option>
+          <option value="red "><strong>Red</strong></option>
+          <option value="pink"><strong>pink</strong></option>
+          <option value="yellow"><strong>yellow</strong></option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select
+          name="price"
+          id="price"
+          placeholder="select"
+          style="width: 200px; height: 40px"
+        >
+          <option value="500-1000"><strong>500-1000</strong></option>
+          <option value="1000-1500"><strong>1000-1500</strong></option>
+          <option value="1500-3000"><strong>1500-3000</strong></option>
+          <option value="3000-5000"><strong>3000-5000</strong></option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select name="sort" id="sort" style="width: 200px; height: 40px">
+          <option value="Popularity"><strong>Popularity</strong></option>
+          <option value="Price high-low">
+            <strong>Price high-low</strong>
+          </option>
+          <option value="Price low-high">
+            <strong>Price low-high</strong>
+          </option>
+          <option value="Brand"><strong>Brand</strong></option>
+        </select>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <div class="row ml-0 py-0 px-5 pt-5">
+      <div class="col-md-3 px-2 text-center">
+        <div
+          [routerLink]="['product']"
+          routerLinkActive="active"
+          style="height: 350px; cursor: pointer"
+        >
+          <img
+            src="http://127.0.0.1:8000/static/product4.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+      <div class="col-md-3 px-2 text-center">
+        <div
+          routerLink="/product"
+          routerLinkActive="active"
+          style="height: 350px; cursor: pointer"
+        >
+          <img
+            src="http://127.0.0.1:8000/static/product1.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+      <div class="col-md-3 px-2 text-center">
+        <div style="height: 350px; cursor: pointer">
+          <img
+            src="http://127.0.0.1:8000/static/product2.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+      <div class="col-md-3 px-3 text-center">
+        <div style="height: 350px; cursor: pointer">
+          <img
+            src="http://127.0.0.1:8000/static/product3.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row ml-0 py-0 px-2 pt-2">
+      <div class="col-md-3 px-2 text-center">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2 text-center">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2 text-center">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2 text-center">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+    </div>
+    <div class="row ml-0 py-0 px-5 pt-5">
+      <div class="col-md-3 px-2">
+        <div style="height: 350px; cursor: pointer">
+          <img
+            src="http://127.0.0.1:8000/static/product5.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div style="height: 350px; cursor: pointer">
+          <img
+            src="http://127.0.0.1:8000/static/product6.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div style="height: 350px; cursor: pointer">
+          <img
+            src="http://127.0.0.1:8000/static/product7.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+      <div class="col-md-3 px-3">
+        <div style="height: 350px; cursor: pointer">
+          <img
+            src="http://127.0.0.1:8000/static/product8.jpg"
+            class="image-hover-highlight zoom"
+            style="height: 350px; width: 85%; padding: 20px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center ml-0 py-0 pt-2">
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+    </div>
+    <div class="row ml-0 py-0 px-5 pt-5">
+      <div class="col-md-3 px-2">
+        <div
+          style="
+            background-color: rgb(208, 230, 236);
+            height: 350px;
+            cursor: pointer;
+          "
+        ></div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div
+          style="
+            background-color: rgb(208, 230, 236);
+            height: 350px;
+            cursor: pointer;
+          "
+        ></div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div
+          style="
+            background-color: rgb(208, 230, 236);
+            height: 350px;
+            cursor: pointer;
+          "
+        ></div>
+      </div>
+      <div class="col-md-3 px-3">
+        <div
+          style="
+            background-color: rgb(208, 230, 236);
+            height: 350px;
+            cursor: pointer;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <div class="row text-center ml-0 py-0 pt-2">
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+      <div class="col-md-3 px-2">
+        <div>
+          <strong>product name<br />$0.00</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ml-5 pt-4">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button class="button btn-primary" style="width: 400px; height: 40px">
+          <strong>VIEW ALL PRODUCTS</strong>
+        </button>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <div
+      class="row text-center mt-0 ml-5 py-0 pt-5 text-center"
+      style="padding-left: 250px"
+    >
+      <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+        <img
+          src="http://127.0.0.1:8000/static/jackets.jpg "
+          class="image-hover-highlight zoom"
+          style="height: 250px"
+        />
+        <p style="font-size: 23px"><strong>Jackets</strong></p>
+      </div>
+      <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+        <img
+          src="http://127.0.0.1:8000/static/dresses.jpg"
+          class="image-hover-highlight zoom"
+          style="height: 250px"
+        />
+        <p style="font-size: 23px"><strong>Dressses</strong></p>
+      </div>
+      <div class="col-md-2 mx-5" style="height: 250px; padding-bottom: 15px">
+        <img
+          src="http://127.0.0.1:8000/static/watches.jpg"
+          class="image-hover-highlight zoom"
+          style="height: 250px"
+        />
+        <p style="font-size: 23px"><strong>Watches</strong></p>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-3 px-2 " >
+             
+             <nav><a routerLink="/product" routerLinlActive="active"  ><div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product4.jpg"class="image-hover-highlight zoom" style=" height: 350px; width: 85%;padding: 20px;"></div></a></nav>
+         </div>
+         <div class="col-md-3 px-2" >
+             <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product1.jpg"class="image-hover-highlight  zoom" style=" height: 350px; width: 85%;padding: 20px;"></div>
+         </div>
+         <div class="col-md-3 px-2" >
+            <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product2.jpg"class="image-hover-highlight  zoom" style=" height: 350px; width: 85%;padding: 20px;"></div>
+         </div>
+         <div class="col-md-3 px-3" >
+            <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product3.jpg"class="image-hover-highlight  zoom" style=" height: 350px; width: 85%;padding: 20px;"></div>
+         </div>
+     </div>
+     
+     <div class="row text-center  ml-0 py-0 px-2 pt-2"  >
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div> -->
+<!-- </div> -->
+<!-- <div class="row   ml-0 py-0  px-5 pt-5"  >
+         <div class="col-md-3 px-2 " >
+            <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product5.jpg"class="image-hover-highlight zoom " style=" height: 350px; width: 85%;padding: 20px;"></div>
+         </div>
+         <div class="col-md-3 px-2" >
+            <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product6.jpg"class="image-hover-highlight  zoom" style=" height: 350px; width: 85%;padding: 20px;"></div>
+         </div>
+         <div class="col-md-3 px-2" >
+            <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product7.jpg"class="image-hover-highlight  zoom " style=" height: 350px; width: 85%;padding: 20px;"></div>
+         </div>
+         <div class="col-md-3 px-3" >
+            <div style=" height: 350px; "><img src="http://127.0.0.1:8000/static/product8.jpg"class="image-hover-highlight  zoom " style=" height: 350px; width: 85%;padding: 20px;"></div>
+         </div>
+     </div>
+     
+     <div class="row text-center  ml-0 py-0 pt-2"  >
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+     </div>
+     <div class="row   ml-0 py-0 px-5  pt-5"  >
+         <div class="col-md-3 px-2 " >
+             <div style="background-color: rgb(208, 230, 236); height: 350px; "></div>
+         </div>
+         <div class="col-md-3 px-2" >
+             <div style="background-color: rgb(208, 230, 236); height: 350px; "></div>
+         </div>
+         <div class="col-md-3 px-2" >
+             <div style="background-color: rgb(208, 230, 236); height: 350px; "></div>
+         </div>
+         <div class="col-md-3 px-3" >
+             <div style="background-color: rgb(208, 230, 236); height: 350px; "></div>
+         </div>
+     </div>
+     
+     <div class="row text-center  ml-0 py-0 pt-2"  >
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+         <div class="col-md-3 px-2 ">
+             <div><strong>product name<br>$0.00</strong></div>
+         </div>
+     </div> -->
+
+<!-- <app-footer></app-footer>
+</ion-content> -->
+-->

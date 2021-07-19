@@ -91,6 +91,7 @@ export class CartPage implements OnInit {
     console.log(index, name);
     this.route.navigate(['/women/product'], {
       queryParams: {
+        group : this.catAindex[index]['group'],
         category: this.catAindex[index]['category'],
         name: name,
         id: this.catAindex[index]['id'],

@@ -126,8 +126,8 @@
 <ion-content class="container-fluid">
   <div class="row p-4">
     <div class="col-md">
-      <p style="color: #ababab">
-        HOME > {{group.toUpperCase()}} > {{category}} > <strong>{{data.subname}}</strong>
+      <p style="color: #ababab" class="pageProgress">
+        <span routerLink = "/homepage">HOME</span> > <span routerLink = "{{'/' + group}}">{{group.toUpperCase()}}</span> > <span routerLink = "{{'/' + group}}" [queryParams] = "{'category' : category}" >{{category}} </span>> <strong>{{data.subname}}</strong>
       </p>
     </div>
   </div>
