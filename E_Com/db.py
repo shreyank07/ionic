@@ -1,7 +1,7 @@
 import json
 import random
 from E_Com import settings
-
+import hashlib
 collection = settings.WOMEN_PRODUCTS
 
 # def readDB ( filename="db.json" ) :
@@ -33,13 +33,16 @@ collection = settings.WOMEN_PRODUCTS
 # a = collection.find_one({"category" : "KURTAS"})
 # print(a["hello"])
 
-collection.update_one({"category" : "SAREES"},({"$push" : {"entries" : {
-  "name": "Nagiri",
-      "subname": "Bandhani Saree",
-      "price": 1938,
-      "color": "Red",
-      "material": "Kalamkari",
-      "weight":  867,
-      "manufacturer": "Kashmiri Gondara Fashions",
-      "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/5/25/39c845a8-bea5-4fa1-a1d9-96aba0d90a611621940411719-1.jpg"
-}}}))
+# collection.update_one({"category" : "SAREES"},({"$push" : {"entries" : {
+#   "name": "Nagiri",
+#       "subname": "Bandhani Saree",
+#       "price": 1938,
+#       "color": "Red",
+#       "material": "Kalamkari",
+#       "weight":  867,
+#       "manufacturer": "Kashmiri Gondara Fashions",
+#       "src" : "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/5/25/39c845a8-bea5-4fa1-a1d9-96aba0d90a611621940411719-1.jpg"
+# }}}))
+
+if not collection.find_one({'category' : 'Chaniya Choli'}):
+  print("not")

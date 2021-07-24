@@ -24,5 +24,6 @@ urlpatterns = [
     path('removeItem',views.removeItem ,name = "Remove"),
     path('login',views.login ,name = "login"),
     path('verify',views.verify,name = "verify"),
-    path('register',views.register,name = "Registrations")
+    path('register',views.register,name = "Registrations"),
+    path('details',views.details,name = "UserDetails")
 ]
