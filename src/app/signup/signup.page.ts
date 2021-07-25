@@ -1,5 +1,7 @@
+import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -17,16 +19,33 @@ export class SignupPage implements OnInit {
   emailBool = false;
   users = [];
   todo = {};
-  constructor(private http: HttpClient) {}
+  clickBool = false;
+  constructor(private http: HttpClient, private user: UserService,private route : Router) {}
 
   ngOnInit(): void {
     // this.user=this.userinfo.getdata()
   }
 
+  submit(f,e){
+    this.clickBool = true
+    this.login(f,e)
+  }
+
   login(form, e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13 || this.clickBool ) {
       if (!form.invalid) {
-        console.log(this.todo);
+        console.log(this.todo)
+        this.user.register(this.todo).subscribe(
+          data => {
+            console.log("reg success",data)
+            alert(data);
+            this.route.navigate(["/login"])
+          },
+          error => {
+            console.log("Reg unsucess",error)
+            alert(error['error']);
+          }
+        );
       } else {
         if (!this.todo['name']) {
           this.inputName.setFocus();
@@ -38,7 +57,11 @@ export class SignupPage implements OnInit {
           this.inputPassword.setFocus();
         }
         if (this.todo['email']) {
+          if (!this.emailBool){
           document.getElementById('EmailValidation').classList.remove('d-none');
+          if(this.todo['name'])
+          this.inputEmail.setFocus()
+          }
         }
       }
     }
@@ -63,6 +86,8 @@ export class SignupPage implements OnInit {
       //
     }
   }
+
+
   change3(e) {
     document.getElementById('EmailValidation').classList.add('d-none');
     // this.check3(e)
@@ -110,9 +135,11 @@ export class SignupPage implements OnInit {
     ) {
       a.classList.add('text-success');
       a.classList.remove('text-danger');
+      this.emailBool = true
     } else {
       a.classList.add('text-danger');
       a.classList.remove('text-success');
+      this.emailBool = false
     }
   }
 }

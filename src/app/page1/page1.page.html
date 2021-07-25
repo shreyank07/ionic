@@ -30,10 +30,10 @@
                   [(ngModel)]="todo.pass"
                   placeholder="Password"
                 ></ion-input>
-              </ion-item>
+              </ion-item> 
               <ion-button type="submit" block="true" clear = "True">LOGIN</ion-button> -->
 
-            <form #form="ngForm" (keydown)="login(form,$event)" class="mt-3">
+            <form #form="ngForm" (ngSubmit) = "login(form,$event)" (keydown)="login(form,$event)" class="mt-3">
               <ion-item>
                 <ion-label position="floating" class="text-secondary"
                   >Email</ion-label
@@ -53,14 +53,14 @@
                 <ion-input
                   name="password"
                   type="password"
-                  [(ngModel)]="todo.pass"
+                  [(ngModel)]="todo.password"
                   required="true"
                 ></ion-input>
                 <a href="">
                   <span class="float-right fpass mb-1"> Forgot Password?</span>
                 </a>
               </ion-item>
-
+              <p class="mb-1 mt-2 ml-1 text-left text-danger" *ngIf = "failedMsg">{{failedMsg}}</p>
               <!-- <ion-item>
                 <ion-input
                   name="password"

@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  getdata() {
-    return [{ name: 'ShreyankLadekar', email: 'Shreyank@autonise.com' }];
+  getUser() {
+    return this.http.get(`http://127.0.0.1:8000/user/details`)
   }
   getdata2(category,group = 'women') {
     return this.http.get(`http://127.0.0.1:8000/${group}/data`, {
@@ -46,4 +46,10 @@ export class UserService {
     })
   }
   
+  register(data){
+    return this.http.post("http://127.0.0.1:8000/user/register",data,{responseType: 'text'})
+  }
+  login(data){
+    return this.http.post("http://127.0.0.1:8000/user/login",data)
+}
 }

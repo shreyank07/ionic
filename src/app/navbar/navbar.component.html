@@ -55,7 +55,14 @@
         </li>
 
         <li class="nav-item">
-          <a [routerLink] = "['/watches']" [queryParams] = "{category : 'ANALOUGE'}" class="nav-link" style="color: black" href="#">WATCHES</a>
+          <a
+            [routerLink]="['/watches']"
+            [queryParams]="{ category: 'ANALOUGE' }"
+            class="nav-link"
+            style="color: black"
+            href="#"
+            >WATCHES</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" style="color: black" href="#">OFFERS</a>
@@ -74,7 +81,7 @@
           <li class="nav-item">
             <a
               class="nav-link dropdown-toggle nav-item dropdown"
-              style="padding: 5px; padding-top: 0px"
+              style="padding: 5px; padding-top: 0px; left: 5%"
               href="#"
               id="dropdownMenuButton"
               role="button"
@@ -82,60 +89,78 @@
               aria-haspopup="true"
               aria-expanded="false"
               ><i class="material-icons iconstyle icon-color">&#xe7fd;</i>
-
               <div
                 class="dropdown-menu dropdown-menu-center"
                 aria-labelledby="dropdownMenuButton"
               >
-                <nav>
-                  <a
-                    class="dropdown-item"
-                    routerLink="/profile"
-                    routerLinlActive="active"
-                  >
-                    <div *ngFor="let u of user">
-                      <p style="font-size: 20px; color: blue">
-                        {{ u.name }}<br /><a
-                          style="font-size: 15px; color: black; margin-top: 0%"
-                          href="#"
-                          >{{ u.email }}</a
-                        >
-                      </p>
-                      <!-- <a style="margin-top: 0%; "href="#">{{u.email}}</a> -->
-                    </div>
+                <div *ngIf="token; else elseBlock">
+                  <nav>
+                    <a
+                      class="dropdown-item"
+                      routerLink="/profile"
+                      routerLinlActive="active"
+                    >
+                      <div>
+                        <p style="font-size: 20px; color: blue">
+                          {{ user.name }}<br /><a
+                            style="
+                              font-size: 15px;
+                              color: black;
+                              margin-top: 0%;
+                            "
+                            href="#"
+                            >{{ user.email }}</a
+                          >
+                        </p>
+                        <!-- <a style="margin-top: 0%; "href="#">{{u.email}}</a> -->
+                      </div>
+                    </a>
+                  </nav>
+
+                  <div class="dropdown-divider"></div>
+                  <nav>
+                    <a
+                      class="dropdown-item"
+                      routerLink="/profile"
+                      routerLinlActive="active"
+                      >Profile</a
+                    >
+                  </nav>
+
+                  <nav>
+                    <a
+                      class="dropdown-item"
+                      routerLink="/history"
+                      routerLinlActive="active"
+                      >Order History</a
+                    >
+                  </nav>
+
+                  <div class="dropdown-divider"></div>
+
+                  <nav>
+                    <a
+                      class="dropdown-item"
+                      style="color: red"
+                      routerLink="/login"
+                      routerLinlActive="active"
+                      >Logout</a
+                    >
+                  </nav>
+                </div>
+                <ng-template #elseBlock>
+                  <div class=" item1 dropdown-item">
+                    <h4 class="helloUser mb-1">Hello User</h4>
+                    <p class="pr-4 statement">
+                      To access account and manage orders
+                    </p>
+                  </div>
+                  <div class="dropdown-divider my-1"></div>
+                  <a class="dropdown-item login">
+                    <span class="signup" routerLink="/signup">SIGNUP</span
+                    >/<span class="signin" routerLink="/login">SIGNIN</span>
                   </a>
-                </nav>
-
-                <div class="dropdown-divider"></div>
-                <nav>
-                  <a
-                    class="dropdown-item"
-                    routerLink="/profile"
-                    routerLinlActive="active"
-                    >Profile</a
-                  >
-                </nav>
-
-                <nav>
-                  <a
-                    class="dropdown-item"
-                    routerLink="/history"
-                    routerLinlActive="active"
-                    >Order History</a
-                  >
-                </nav>
-
-                <div class="dropdown-divider"></div>
-
-                <nav>
-                  <a
-                    class="dropdown-item"
-                    style="color: red"
-                    routerLink="/login"
-                    routerLinlActive="active"
-                    >Logout</a
-                  >
-                </nav>
+                </ng-template>
               </div>
             </a>
           </li>

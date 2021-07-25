@@ -18,11 +18,17 @@ a:active {
   left: auto;
 }
 .dropdown-menu-center {
-  left: 50% !important;
+  left: 5% !important;
   right: auto !important;
 
   transform: translate(-50%, 0) !important;
 }
+// .dropdown-item:active{
+//   color: white !important;
+// }
+// .dropdown-item a:active{
+//   color: white !important;
+// }
 .navbar-brand > h3 {
   color: #0855fa;
   font-family: "Raleway", sans-serif;
@@ -33,4 +39,35 @@ a:active {
   text-transform: uppercase;
   margin-top: 3px;
   cursor: pointer;
+}
+.login{
+  font-weight: 500;
+  color: #0855fa;
+}
+.login:hover{
+  text-decoration: none;
+}
+
+.login:active{
+  color: white;
+}
+
+.signup:hover{
+  text-decoration: underline;
+}
+
+.signin:hover{
+  text-decoration: underline;
+}
+
+.statement{
+  font-weight: 200;
+}
+
+.helloUser{
+  font-weight: 500;
+}
+
+.item1{
+ //
 }
