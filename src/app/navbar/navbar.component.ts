@@ -18,26 +18,15 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getUser().subscribe((data) => {
+    this.service.getUser(this.token).subscribe((data) => {
       this.user = data;
     });
   }
 
-  history() {
-    this.userstatus = localStorage.getItem('loginstatus');
-    if (this.userstatus == 'true') {
-      this.router.navigate(['/history']);
-    } else {
-      alert('Login Please');
-      this.router.navigate(['/page1']);
-    }
-  }
-  isloggedin() {
-    if (this.userstatus == 'true') {
-      localStorage.removeItem('loginstatus');
-      this.logged = 'Login';
-    } else {
-      this.router.navigate(['/page1']);
-    }
+  logOut(){
+    console.log("Logged out")
+    this.token = null
+    localStorage.removeItem('token')
+    this.router.navigate(["/register"])
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ChowkidaarGuard } from './chowkidaar.guard';
 import { ProductPage } from './product/product.page';
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./homepage/homepage.module').then( m => m.HomepagePageModule)
   },
   {
-    path: 'page1',
+    path: 'register',
     loadChildren: () => import('./page1/page1.module').then( m => m.Page1PageModule)
   },
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   },
   {
     path: 'history',
-    loadChildren: () => import('./history/history.module').then( m => m.HistoryPageModule)
+    loadChildren: () => import('./history/history.module').then( m => m.HistoryPageModule),
+    canActivate : [ChowkidaarGuard]
   },
   {
     path: 'women',
@@ -62,7 +64,8 @@ const routes: Routes = [
 
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule),
+    canActivate : [ChowkidaarGuard]
   },
   {
     path: 'watches',

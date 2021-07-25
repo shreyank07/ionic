@@ -13,21 +13,20 @@
 //   constructor() {}
 
 //   intercept(
-//     request: HttpRequest<unknown>,
+//     request: HttpRequest<any>,
 //     next: HttpHandler
-//   ): Observable<HttpEvent<unknown>> {
-//     // const userToken = localStorage.getItem('token');
-//     // let myHeaders = new HttpHeaders()
-//     //   .set('content-type','application/json')
-//     //   .set('Access-Control-Allow-Origin', '*')
-//     //   .set('token',userToken)
-//     //   .set('Access-Control-Allow-Credentials', 'true')
-//     //   .set('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH')
-//     // if (!userToken) return next.handle(request);
-//     // const modifiedReq = request.clone({
-      
-//     //   headers:myHeaders
-//     // });
-//     // return next.handle(modifiedReq);
+//   ): Observable<HttpEvent<any>> {
+//     const userToken = localStorage.getItem('token');
+//     let myHeaders = new HttpHeaders()
+//     myHeaders.append('Access-Control-Allow-Headers', '*')
+//     myHeaders.append('Content-Type', 'application/json')
+//     if (!userToken) {
+//       return next.handle(request);
+//     }
+//     console.log("User tokenns")
+//     const modifiedReq = request.clone({
+//       headers: myHeaders
+//     });
+//     return next.handle(modifiedReq);
 //   }
 // }
