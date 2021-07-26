@@ -42,7 +42,7 @@ def cart(request):
 @csrf_exempt
 def details(request):
     print("runinnnnnnnnnnnadsgdag")
-    token = json.loads(request.headers)['token']
+    token = request.headers.get('Authorization',None)
     print("token is ",token)
     data = jwt.decode(token, settings.SECRET_KEY, algorithms='HS256')
     print("data is",data)

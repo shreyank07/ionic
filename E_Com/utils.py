@@ -7,7 +7,7 @@ from django.http import HttpResponse
 def requireLogin(to_authenticate_fn):
     @wraps(to_authenticate_fn)
     def inner(request, *args, **kwargs):
-        token = request.headers.get('token', None)
+        token = request.headers.get('token',None)
 
         if verify_token(token):
             return to_authenticate_fn(request, *args, **kwargs)
