@@ -1,0 +1,19 @@
+.button-hover-highlight {
+    -webkit-transition: all 1.5s;
+    transition: all 1.55s;
+    
+    &:hover {
+        border: 1px solid grey;
+        filter: brightness(130%);
+        color: cadetblue;
+        -webkit-filter: brightness(130%);
+        -moz-filter: brightness(130%);
+        -o-filter: brightness(130%);
+        -ms-filter: brightness(130%);
+        -webkit-transition: all 2.50s;
+        -ms-transform: scale(1.1); /* IE 9 */
+      -webkit-transform: scale(1.1); /* Safari 3-8 */
+      transform: scale(1.1); 
+        transition: all 0.50s;
+    }
+}

@@ -1,0 +1,4 @@
+1. In the product page I just declared the data and not initialized it so it was giving error cannot read property <x> of undefined.
+2. Just internet a liitle thig, in women page found the (selectionChange) whhich is way better than what I did.
+3. Using tab index an img can also have focus
+4. You can use \<entity utf encoding> in the string and '<entity html encoding>; in the htmL to display that entity

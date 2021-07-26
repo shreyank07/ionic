@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid ">
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-light box-shadow"
+    class="navbar navbar-expand-lg navbar-light bg-light box-shadow backimg"
     style="background-color: rgb(105, 163, 182)"
   >
     <a style="text-decoration: none" class="navbar-brand"
@@ -55,17 +55,10 @@
         </li>
 
         <li class="nav-item">
-          <a
-            [routerLink]="['/watches']"
-            [queryParams]="{ category: 'ANALOUGE' }"
-            class="nav-link"
-            style="color: black"
-            href="#"
-            >WATCHES</a
-          >
+          <a [routerLink] = "['/watches']" [queryParams] = "{category : 'ANALOUGE'}" class="nav-link" style="color: black" href="#">WATCHES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color: black" href="#">OFFERS</a>
+          <a class="nav-link" routerLink="/weboffers" routherlinkActive="active" style="color: black" href="#">OFFERS</a>
         </li>
       </ul>
       <nav class="navbar navbar-expand-sm">
@@ -81,7 +74,7 @@
           <li class="nav-item">
             <a
               class="nav-link dropdown-toggle nav-item dropdown"
-              style="padding: 5px; padding-top: 0px; left: 5%"
+              style="padding: 5px; padding-top: 0px"
               href="#"
               id="dropdownMenuButton"
               role="button"

@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./homepage/homepage.module').then( m => m.HomepagePageModule)
   },
   {
-    path: 'register',
+    path: 'login',
     loadChildren: () => import('./page1/page1.module').then( m => m.Page1PageModule)
   },
 
@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
  
-  {
-    path: 'login',
-    loadChildren: () => import('./page1/page1.module').then( m => m.Page1PageModule)
-  },
   {
     path: 'men',
     loadChildren: () => import('./mens/mens.module').then( m => m.MensPageModule)
@@ -70,7 +66,12 @@ const routes: Routes = [
   {
     path: 'watches',
     loadChildren: () => import('./watches/watches.module').then( m => m.WatchesPageModule)
-  }
+  },
+  {
+    path: 'weboffers',
+    loadChildren: () => import('./weboffers/weboffers.module').then( m => m.WeboffersPageModule)
+  },
+  
 
 
 

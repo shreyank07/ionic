@@ -11,7 +11,6 @@ export class NavbarComponent implements OnInit {
   token: any;
   user: any = [];
   userstatus;
-  logged;
 
   constructor(private service: UserService, private router: Router) {
     this.token = localStorage.getItem('token');
@@ -27,6 +26,6 @@ export class NavbarComponent implements OnInit {
     console.log("Logged out")
     this.token = null
     localStorage.removeItem('token')
-    this.router.navigate(["/register"])
+    this.router.navigate(["/signup"])
   }
 }
